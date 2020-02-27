@@ -66,9 +66,17 @@ Roboto weights:
     color: #8A0000;
 }
 
+#downloadButton:hover {
+    background-color: #f85b36;
+}
+
 #documentationButton {
     background-color: #580000;
     border-style: solid;
     border-width: 2px;
     border-color: #FF9E79;
+}
+
+#documentationButton:hover {
+    background-color: #4b0101;
 }

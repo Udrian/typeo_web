@@ -1,4 +1,6 @@
 ﻿import React, { Component } from 'react';
+import { DownloadButton } from '../DownloadButton';
+import { DocumentButton } from '../DocumentButton';
 
 export class StartSection extends Component {
     static displayName = StartSection.name;
@@ -11,11 +13,10 @@ export class StartSection extends Component {
         return (
             <>
                 <h1>TypeO</h1>
-                <h2>The best open source game engine. Ever.</h2>
-                <h2>Or something else provocative.</h2>
+                <h2>A modular .net Core game engine</h2>
                 <div className="buttonBar">
-                    <div id="downloadButton"><h3>DOWNLOAD</h3></div>
-                    <div id="documentationButton"><h3>Documentation</h3></div>
+                    <DownloadButton/>
+                    <DocumentButton/>
                 </div>
             </>
         );
