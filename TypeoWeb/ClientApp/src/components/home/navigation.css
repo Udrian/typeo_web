@@ -1,0 +1,16 @@
+﻿
+
+.scrollButton {
+    fill: #ffd1a9;
+}
+
+
+.upNavigation {
+    justify-content: flex-start;
+    margin-bottom: auto;
+}
+
+.downNavigation {
+    justify-content: flex-end;
+    margin-top: 1vw;
+}

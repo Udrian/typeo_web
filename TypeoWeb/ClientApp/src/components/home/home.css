@@ -1,0 +1,74 @@
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section .container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.startSection {
+    background-color: #580000;
+}
+
+.gettingStartedSection {
+    background-color: #8A0000;
+}
+
+.downloadSection {
+    background-color: #C23B22;
+}
+
+.documentationSection {
+    background-color: #FB6D4C;
+}
+
+#step1, #step2 {
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/*
+Roboto weights:
+    100 thin titles
+    300 light copy
+    700 bold buttons
+*/
+
+.buttonBar {
+    display: inline-flex;
+    flex-direction: row;
+    margin: 2vw;
+    height: 3vw;
+}
+
+#downloadButton, #documentationButton {
+    height: 100%;
+    width: 10vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.buttonBar h3 {
+    top: 1vw;
+    position: relative;
+}
+
+#downloadButton {
+    background-color: #FB6D4C;
+    color: #8A0000;
+}
+
+#documentationButton {
+    background-color: #580000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FF9E79;
+}

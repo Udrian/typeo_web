@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #FFD1A9;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4.5vw;
+    font-weight: 100;
+    margin: 1vw;
+}
+
+h2 {
+    font-size: 1.875vw;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 0.75vw;
+    font-weight: 700;
+}
