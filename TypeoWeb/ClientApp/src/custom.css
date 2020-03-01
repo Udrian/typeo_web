@@ -25,3 +25,32 @@ h3 {
     font-size: 0.75vw;
     font-weight: 700;
 }
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section .container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.startSection {
+    background-color: #580000;
+}
+
+.gettingStartedSection {
+    background-color: #8A0000;
+}
+
+.downloadSection {
+    background-color: #C23B22;
+}
+
+.documentationSection {
+    background-color: #FB6D4C;
+}

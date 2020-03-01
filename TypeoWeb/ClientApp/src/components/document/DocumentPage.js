@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 
-export class Download extends Component {
-    static displayName = Download.name;
+export class DocumentPage extends Component {
+    static displayName = DocumentPage.name;
 
     constructor(props) {
         super(props);

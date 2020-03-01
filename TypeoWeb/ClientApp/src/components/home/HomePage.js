@@ -9,10 +9,10 @@ import { GettingStartedSection } from './sections/GettingStartedSection'
 import { DownloadSection } from './sections/DownloadSection'
 import { DocumentationSection } from './sections/DocumentationSection'
 
-import './home.css'
+import './homePage.css'
 
-export class Home extends Component {
-    static displayName = Home.name;
+export class HomePage extends Component {
+    static displayName = HomePage.name;
 
     constructor(props) {
         super(props);
