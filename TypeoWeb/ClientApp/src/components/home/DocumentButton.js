@@ -1,11 +1,12 @@
 ﻿import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 export class DocumentButton extends Component {
     static displayName = DocumentButton.name;
 
     render() {
         return (
-            <div id="documentationButton" onClick={() => window.open('/doc', "_self")}><h3>Documentation</h3></div>
+            <Link id="documentationButton" to="/doc"><h3>Documentation</h3></Link>
         );
     }
 }

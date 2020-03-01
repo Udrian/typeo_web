@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import { DocumentButton } from '../DocumentButton';
 
 export class DocumentationSection extends Component {
     static displayName = DocumentationSection.name;
@@ -10,7 +11,10 @@ export class DocumentationSection extends Component {
     render() {
         return (
             <>
-                <h2 style={{ marginBottom: '20vw' }}>Up to date documentation in some sort of shape or form.</h2>
+                <h2>Documentation for the latest version can be found through the button below</h2>
+                <div className="buttonBar">
+                    <DocumentButton />
+                </div>
             </>
         );
     }

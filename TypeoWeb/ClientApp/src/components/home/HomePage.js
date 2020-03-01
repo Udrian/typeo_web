@@ -59,6 +59,9 @@ export class HomePage extends Component {
                     <Container>
                         <DocumentationSection/>
                     </Container>
+
+
+                    <div style={{ height: '5vw' }}/>
                 </Section>
             </>
         );
