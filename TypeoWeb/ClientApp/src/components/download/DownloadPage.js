@@ -1,6 +1,5 @@
 ﻿import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { Section } from '../home/Section';
 import { DownloadButton } from '../home/DownloadButton';
 import { DocumentButton } from '../home/DocumentButton';
 import { BackNavigation } from '../home/BackNavigation';
