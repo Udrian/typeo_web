@@ -24,7 +24,11 @@
     }
 
 .backNavigation {
+    justify-content: flex-start;
+    color: inherit;
+    text-decoration: inherit;
 }
-    .backNavigation h2 {
-        text-decoration: unset;
+    .backNavigation:hover {
+        color: inherit;
+        text-decoration: inherit;
     }
