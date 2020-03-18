@@ -17,7 +17,7 @@ export class DownloadButton extends Component {
         if (!this.props.download) {
             link = <Link id="downloadButton" to="/download"><h3>DOWNLOAD</h3></Link>;
         } else {
-            link = <Link id="downloadButton" to={"/download/" + this.props.download} onClick={() => this.sendDownloadAnalytics(this.props.download) } target="_blank" download><h3>DOWNLOAD</h3></Link>;
+            link = <Link id="downloadButton" to={"/download/" + this.props.download + (this.props.path ? "?path=" + this.props.path : "")} onClick={() => this.sendDownloadAnalytics((this.props.path ? this.props.path + "/" : "") + this.props.download)} target="_blank" download><h3>DOWNLOAD</h3></Link>;
         }
 
         return (

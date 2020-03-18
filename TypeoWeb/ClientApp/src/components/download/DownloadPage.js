@@ -21,36 +21,36 @@ export class DownloadPage extends Component {
                         <h1>Samples</h1>
                         <h2>Particles</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="Particles.zip"/>
+                            <DownloadButton path="samples" download="Particles.zip"/>
                         </div>
                         <h2>Breakout</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="Breakout.zip"/>
+                            <DownloadButton path="samples" download="Breakout.zip"/>
                         </div>
                         <h2>Space invader</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="SpaceInvader.zip"/>
+                            <DownloadButton path="samples" download="SpaceInvader.zip"/>
                         </div>
                         <h1>TypeO</h1>
                         <h2>Download the latest version (0.1.0)</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="TypeO-0.1.0.0.zip"/>
+                            <DownloadButton download="TypeO-v0.1.0.1.zip"/>
                             <DocumentButton />
                         </div>
                         <h1>Individual modules</h1>
                         <h2>TypeOCore (0.1.0)</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="TypeOCore-0.1.0.0.zip" />
+                            <DownloadButton download="TypeOCore-v0.1.0.1.zip" />
                             <DocumentButton />
                         </div>
                         <h2>TypeODesktop (0.1.0)</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="TypeODesktop-0.1.0.0.zip" />
+                            <DownloadButton download="TypeODesktop-v0.1.0.1.zip" />
                             <DocumentButton />
                         </div>
                         <h2>TypeOSDL (0.1.0)</h2>
                         <div className="buttonBar">
-                            <DownloadButton download="TypeOSDL-0.1.0.0.zip" />
+                            <DownloadButton download="TypeOSDL-v0.1.0.1.zip" />
                             <DocumentButton />
                         </div>
                     </Container>
