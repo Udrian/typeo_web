@@ -11,6 +11,10 @@ const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 
 const trackingId = process.env.REACT_APP_TRACKING_ID;
+
+console.log("The tracking ID");
+console.log(trackingId);
+
 ReactGA.initialize(trackingId);
 
 const history = createBrowserHistory();
