@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 
-const trackingId = "UA-160714659-1";
+const trackingId = process.env.REACT_APP_TRACKING_ID;
 ReactGA.initialize(trackingId);
 
 const history = createBrowserHistory();
