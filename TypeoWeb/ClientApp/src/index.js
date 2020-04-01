@@ -14,6 +14,7 @@ const trackingId = process.env.REACT_APP_TRACKING_ID;
 
 console.log("The tracking ID");
 console.log(trackingId);
+console.log(process.env);
 
 ReactGA.initialize(trackingId);
 
