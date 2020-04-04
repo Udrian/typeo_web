@@ -37,6 +37,11 @@ export class DownloadPage extends Component {
                             <DownloadButton download="TypeO-v0.1.0.1.zip"/>
                             <DocumentButton />
                         </div>
+                        <h2>Download the latest development build (0.1.1)</h2>
+                        <div className="buttonBar">
+                            <DownloadButton path="dev" download="TypeO-v0.1.1.dev3.zip" />
+                            <DocumentButton />
+                        </div>
                         <h1>Individual modules</h1>
                         <h2>TypeOCore (0.1.0)</h2>
                         <div className="buttonBar">
