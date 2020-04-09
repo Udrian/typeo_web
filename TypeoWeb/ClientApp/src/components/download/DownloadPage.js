@@ -39,7 +39,7 @@ export class DownloadPage extends Component {
                         </div>
                         <h2>Download the latest development build (0.1.1)</h2>
                         <div className="buttonBar">
-                            <DownloadButton path="dev" download="TypeO-v0.1.1.dev5.zip" />
+                            <DownloadButton path="dev" download="TypeO-v0.1.1.dev6.zip" />
                             <DocumentButton />
                         </div>
                         <h1>Individual modules</h1>
