@@ -21,15 +21,15 @@ export class DownloadPage extends Component {
                         <h1>Samples</h1>
                         <h2>Particles</h2>
                         <div className="buttonBar">
-                            <DownloadButton path="samples" download="Particles.zip"/>
+                            <DownloadButton download="samples/Particles.zip"/>
                         </div>
                         <h2>Breakout</h2>
                         <div className="buttonBar">
-                            <DownloadButton path="samples" download="Breakout.zip"/>
+                            <DownloadButton download="samples/Breakout.zip"/>
                         </div>
                         <h2>Space invader</h2>
                         <div className="buttonBar">
-                            <DownloadButton path="samples" download="SpaceInvader.zip"/>
+                            <DownloadButton download="samples/SpaceInvader.zip"/>
                         </div>
                         <h1>TypeO</h1>
                         <h2>Download the latest version (0.1.0)</h2>
@@ -39,7 +39,7 @@ export class DownloadPage extends Component {
                         </div>
                         <h2>Download the latest development build (0.1.1)</h2>
                         <div className="buttonBar">
-                            <DownloadButton path="dev" download="TypeO-v0.1.1.dev6.zip" />
+                            <DownloadButton download="dev/TypeO-v0.1.1.dev6.zip" />
                             <DocumentButton />
                         </div>
                         <h1>Individual modules</h1>

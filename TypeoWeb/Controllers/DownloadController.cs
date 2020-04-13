@@ -15,7 +15,13 @@ namespace TypeoWeb.Controllers
         }
 
         [HttpGet("{file}")]
-        public IActionResult Get([FromRoute] string file, [FromQuery] string path)
+        public IActionResult GetFile([FromRoute] string file)
+        {
+            return Redirect($"https://typedeaf.nyc3.cdn.digitaloceanspaces.com/typeo/releases/{file}");
+        }
+
+        [HttpGet("{path}/{file}")]
+        public IActionResult GetFilePath([FromRoute] string path, [FromRoute] string file)
         {
             path = (string.IsNullOrEmpty(path) ? "" : path + "/");
             return Redirect($"https://typedeaf.nyc3.cdn.digitaloceanspaces.com/typeo/releases/{path}{file}");
