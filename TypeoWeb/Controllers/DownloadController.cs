@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Text.RegularExpressions;
 
 namespace TypeoWeb.Controllers
 {
@@ -25,6 +30,30 @@ namespace TypeoWeb.Controllers
         {
             path = (string.IsNullOrEmpty(path) ? "" : path + "/");
             return Redirect($"https://typedeaf.nyc3.cdn.digitaloceanspaces.com/typeo/releases/{path}{file}");
+        }
+
+        [HttpGet("latest")]
+        public async System.Threading.Tasks.Task<IActionResult> GetAsync([FromQuery] string query)
+        {
+            var key = "ZCBOSFIPCUV5BJBFK7R6";
+            var secret = "/kOyUO3uBI6b8oYpJSSGrEMM7/+LWZft23WKqPv7sh4";
+            var config = new AmazonS3Config() { ServiceURL = "https://nyc3.digitaloceanspaces.com" };
+            var s3 = new AmazonS3Client(key, secret, config);
+            var result = await s3.ListObjectsV2Async(new ListObjectsV2Request() { BucketName = "typedeaf" });
+
+            DateTime latest = DateTime.MinValue;
+            var returnKey = "";
+            foreach(var obj in result.S3Objects)
+            {
+                if (!obj.Key.StartsWith("typeo/releases/")) continue;
+                var objkey = obj.Key.Remove(0, ("typeo/releases/").Length);
+                if (Regex.IsMatch(objkey, query) && obj.LastModified > latest)
+                {
+                    returnKey = objkey;
+                }
+            }
+
+            return Ok(returnKey);
         }
     }
 }

@@ -12,12 +12,23 @@ export class DownloadButton extends Component {
         });
     }
 
+    constructor(props) {
+        super(props);
+        this.state = { downloadLink: ""};
+    }
+
+    componentDidMount() {
+        this.fetchLatestDownload(this.props.download);
+    }
+
     render() {
         let link;
         if (!this.props.download) {
             link = <Link id="downloadButton" to="/download"><h3>DOWNLOAD</h3></Link>;
         } else {
-            link = <Link id="downloadButton" to={"/download/" + this.props.download} onClick={() => this.sendDownloadAnalytics(this.props.download)} target="_blank" download><h3>DOWNLOAD</h3></Link>;
+            if (this.state.downloadLink) {
+                link = <Link id="downloadButton" to={"/download/" + this.state.downloadLink} onClick={() => this.sendDownloadAnalytics(this.state.downloadLink)} target="_blank" download><h3>DOWNLOAD</h3></Link>;
+            }
         }
 
         return (
@@ -25,5 +36,11 @@ export class DownloadButton extends Component {
                 {link}
             </>
         );
+    }
+
+    async fetchLatestDownload(downloadPath) {
+        const response = await fetch("download/latest?query=" + downloadPath);
+        const data = await response.text();
+        this.setState({ downloadLink: data });
     }
 }
