@@ -50,6 +50,7 @@ namespace TypeoWeb.Controllers
                 if (Regex.IsMatch(objkey, query) && obj.LastModified > latest)
                 {
                     returnKey = objkey;
+                    latest = obj.LastModified;
                 }
             }
 
