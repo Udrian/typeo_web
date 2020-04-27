@@ -4,7 +4,11 @@ using Amazon.S3.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
+using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace TypeoWeb.Controllers
 {
@@ -33,7 +37,7 @@ namespace TypeoWeb.Controllers
         }
 
         [HttpGet("latest")]
-        public async System.Threading.Tasks.Task<IActionResult> GetAsync([FromQuery] string query)
+        public async Task<IActionResult> GetLatestAsync([FromQuery] string query)
         {
             var key = "ZCBOSFIPCUV5BJBFK7R6";
             var secret = "/kOyUO3uBI6b8oYpJSSGrEMM7/+LWZft23WKqPv7sh4";
@@ -45,9 +49,9 @@ namespace TypeoWeb.Controllers
             var returnKey = "";
             foreach(var obj in result.S3Objects)
             {
-                if (!obj.Key.StartsWith("typeo/releases/")) continue;
+                if(!obj.Key.StartsWith("typeo/releases/")) continue;
                 var objkey = obj.Key.Remove(0, ("typeo/releases/").Length);
-                if (Regex.IsMatch(objkey, query) && obj.LastModified > latest)
+                if(Regex.IsMatch(objkey, query) && obj.LastModified > latest)
                 {
                     returnKey = objkey;
                     latest = obj.LastModified;
@@ -55,6 +59,19 @@ namespace TypeoWeb.Controllers
             }
 
             return Ok(returnKey);
+        }
+
+        [HttpGet("releasenotes")]
+        public async Task<IActionResult> GetreleasenotesAsync()
+        {
+            var path = "https://typedeaf.nyc3.cdn.digitaloceanspaces.com/typeo/releases/ReleaseNotes.txt";
+
+            var net = new WebClient();
+            var data = net.DownloadData(path);
+            var content = new MemoryStream(data);
+            var stringContent = Encoding.ASCII.GetString(content.ToArray());
+
+            return Ok(stringContent);
         }
     }
 }
