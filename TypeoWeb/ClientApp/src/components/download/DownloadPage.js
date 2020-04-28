@@ -32,7 +32,7 @@ export class DownloadPage extends Component {
                             <DownloadButton download="^samples/SpaceInvader.zip"/>
                         </div>
                         <h1>TypeO</h1>
-                        <h2>Download the latest version (0.1.0)</h2>
+                        <h2>Download the latest version (0.1.1)</h2>
                         <div className="buttonBar">
                             <DownloadButton download="^TypeO-"/>
                             <DocumentButton />
@@ -43,17 +43,17 @@ export class DownloadPage extends Component {
                             <DocumentButton />
                         </div>
                         <h1>Individual modules</h1>
-                        <h2>TypeOCore (0.1.0)</h2>
+                        <h2>TypeOCore (0.1.1)</h2>
                         <div className="buttonBar">
                             <DownloadButton download="^TypeOCore-" />
                             <DocumentButton />
                         </div>
-                        <h2>TypeODesktop (0.1.0)</h2>
+                        <h2>TypeODesktop (0.1.1)</h2>
                         <div className="buttonBar">
                             <DownloadButton download="^TypeODesktop-" />
                             <DocumentButton />
                         </div>
-                        <h2>TypeOSDL (0.1.0)</h2>
+                        <h2>TypeOSDL (0.1.1)</h2>
                         <div className="buttonBar">
                             <DownloadButton download="^TypeOSDL-" />
                             <DocumentButton />
