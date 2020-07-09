@@ -37,7 +37,7 @@ export class DownloadPage extends Component {
                             <DownloadButton download="^TypeO-"/>
                             <DocumentButton />
                         </div>
-                        <h2>Download the latest development build (0.1.2)</h2>
+                        <h2>Download the latest development build (0.1.3)</h2>
                         <div className="buttonBar">
                             <DownloadButton download="^dev/TypeO-" />
                             <DocumentButton />
