@@ -12,7 +12,7 @@ export class DownloadSection extends Component {
     render() {
         return (
             <>
-                <h2>Download the latest version (0.1.0)</h2>
+                <h2>Download the latest version (0.1.2)</h2>
                 <div className="buttonBar">
                     <DownloadButton/>
                     <DocumentButton/>
