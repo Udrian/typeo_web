@@ -46,15 +46,16 @@ namespace TypeoWeb.Controllers
             {
                 if (!obj.Key.StartsWith("typeo/releases/modules/")) continue;
                 if (!obj.Key.EndsWith("product")) continue;
-                /*var name = obj.Key.Remove(0, ("typeo/releases/modules/").Length);
+                var name = obj.Key.Remove(0, ("typeo/releases/modules/").Length);
                 name = name.Remove(name.IndexOf("/"));
                 var version = obj.Key.Remove(0, ($"typeo/releases/modules/{name}/").Length);
-                version = version.Remove(version.IndexOf("/"));*/
+                version = version.Remove(version.IndexOf("/"));
 
                 var getResult = await s3.GetObjectAsync(new GetObjectRequest() { BucketName = "typedeaf", Key = obj.Key });
                 var json = await new StreamReader(getResult.ResponseStream, Encoding.Latin1).ReadToEndAsync();
                 
                 var product = (Module)JsonSerializer.Deserialize(json, typeof(Module));
+                product.version = version;
 
                 if (!modules.ContainsKey(product.name))
                     modules.Add(product.name, new List<Module>());
