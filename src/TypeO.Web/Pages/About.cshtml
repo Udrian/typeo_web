@@ -1,0 +1,44 @@
+@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<h1>About TypeO</h1>
+
+<p>
+    TypeO is a hobby-grown, open source game engine and editor for .NET, built and maintained by
+    <a href="@Model.Site.GitHubOwnerUrl" rel="noopener">@@@Model.Site.GitHubOwner</a>.
+    The project consists of the <strong>TypeDitor</strong> editor, the <strong>TypeO</strong> engine modules,
+    the <strong>typer</strong> command line tooling and the <strong>TypeDater</strong> installer/updater.
+</p>
+
+<h2>Useful information</h2>
+<ul>
+    <li>Games and modules are written in <strong>C#</strong> and target <strong>.NET 10</strong>.</li>
+    <li>Everything is modular &mdash; engine features and editor features ship as <a asp-page="/Modules">modules</a> that are versioned and distributed through GitHub.</li>
+    <li>TypeDitor runs on Windows and Linux and is installed through <a asp-page="/Download">TypeDater</a>.</li>
+    <li>API documentation for every module version is generated automatically and browsable under <a asp-page="/Documentation/Index">Documentation</a>.</li>
+</ul>
+
+<h2>Contact</h2>
+<ul>
+    <li>GitHub: <a href="@Model.Site.GitHubOwnerUrl" rel="noopener">@Model.Site.GitHubOwnerUrl</a></li>
+    @if (!string.IsNullOrEmpty(Model.Site.ContactEmail))
+    {
+        <li>Email: <a href="mailto:@Model.Site.ContactEmail">@Model.Site.ContactEmail</a></li>
+    }
+    <li>Found a bug or have a feature request? Open an issue on the matching repository below.</li>
+</ul>
+
+<h2>Repositories</h2>
+<div class="card-grid">
+    @foreach (var repo in Model.Site.Repositories)
+    {
+        <a class="card" href="@repo.Url" rel="noopener">
+            <h3>@repo.Name</h3>
+            <p>@repo.Description</p>
+            <span class="card-link">View on GitHub &rarr;</span>
+        </a>
+    }
+</div>

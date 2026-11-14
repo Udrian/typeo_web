@@ -1,0 +1,111 @@
+@page "/getting-started"
+@{
+    ViewData["Title"] = "Getting Started";
+}
+
+<h1>Getting Started</h1>
+
+<p>
+    This guide takes you from nothing to a running game: installing TypeDitor, setting up the
+    development prerequisites and building a first small project.
+</p>
+
+<h2>Prerequisites</h2>
+<p>
+    TypeDitor builds your game from C# source while you work, and both the installer and the editor use the
+    <code>typer</code> tooling under the hood. Make sure the following are installed and available on your
+    <code>PATH</code>:
+</p>
+<ul>
+    <li><a href="https://dotnet.microsoft.com/download" rel="noopener">.NET SDK 10.0</a> or later &mdash; compiles TypeDitor, the modules and your game.</li>
+    <li><a href="https://git-scm.com/" rel="noopener">Git</a> &mdash; used to fetch TypeDitor and module versions from GitHub.</li>
+    <li><a href="https://www.python.org/downloads/" rel="noopener">Python 3</a> &mdash; runs <code>typer</code>, which generates project files and resolves module dependencies.</li>
+    <li>Optional but recommended: a C# IDE such as Visual Studio, Rider or VS Code for writing your game code.</li>
+</ul>
+
+<h2>Install TypeDitor</h2>
+<ol class="steps">
+    <li>
+        <strong>Download TypeDater</strong> for your platform from the <a asp-page="/Download">download page</a>
+        and extract it into an empty folder where you want TypeDitor to live, for example
+        <code>C:\Tools\TypeDitor</code> or <code>~/typeditor</code>.
+    </li>
+    <li>
+        <strong>Run TypeDater</strong>. When there is no TypeDitor next to it, it switches to install mode:
+        it fetches the latest TypeDitor release, generates the project files with typer and builds the editor.
+        This can take a few minutes the first time.
+    </li>
+    <li>
+        <strong>Start TypeDitor</strong> from the same folder. Later on, running TypeDater again (or letting
+        TypeDitor check for updates) updates the installation in place.
+    </li>
+</ol>
+
+<h2>Your first project</h2>
+<ol class="steps">
+    <li>
+        <strong>Create a new project</strong> in TypeDitor. A TypeO project is described by a
+        <code>typeo.json</code> file that lists its name, version and module dependencies.
+    </li>
+    <li>
+        <strong>Add modules.</strong> For a 2D desktop game you typically want
+        <code>TypeOCore</code> (always required), <code>TypeOBasic2d</code>, <code>TypeODesktop</code> and
+        <code>TypeOTK</code>. TypeDitor downloads each module version, resolves their dependencies and builds them.
+    </li>
+    <li>
+        <strong>Explore the generated code.</strong> TypeDitor generates the program entry point for you.
+        For a game called <code>MyGame</code> it looks like this:
+<pre><code>TypeO.Create&lt;MyGame&gt;("MyGame")
+    .LoadModule&lt;Basic2dModule&gt;()
+    .LoadModule&lt;DesktopModule&gt;()
+    .LoadModule&lt;TKModule&gt;()
+    .Start();</code></pre>
+        Your game class derives from <code>Game</code> and is where you set up the window, input and your
+        first scene:
+<pre><code>partial class MyGame : Game
+{
+    public WindowService WindowService { get; set; }
+    public KeyboardInputService KeyboardInputService { get; set; }
+
+    protected void InternalInitialize()
+    {
+        KeyboardInputService.SetKeyAlias("Quit", KeyboardKey.Escape);
+        MainWindow = WindowService.CreateWindow("MyGame", new Vec2i(100, 100), new Vec2i(1280, 720));
+    }
+
+    protected void InternalCleanup()
+    {
+    }
+}</code></pre>
+    </li>
+    <li>
+        <strong>Add components.</strong> Create scenes, entities and drawables as components in TypeDitor.
+        The editor generates the plumbing into <code>.typed.cs</code> files and leaves matching partial
+        classes for your own logic. Custom properties you add in the editor become C# properties on
+        your components.
+    </li>
+    <li>
+        <strong>Run it.</strong> Press play in TypeDitor to build and run your game inside the editor
+        viewport, complete with selection, move and resize tools &mdash; or run the generated solution
+        straight from your IDE.
+    </li>
+</ol>
+
+<h2>Where to go next</h2>
+<div class="card-grid">
+    <a class="card" asp-page="/Modules">
+        <h3>Modules</h3>
+        <p>Understand how modules are set up, how versions and dependencies work, and how to write your own.</p>
+        <span class="card-link">Read the module guide &rarr;</span>
+    </a>
+    <a class="card" asp-page="/Documentation/Index">
+        <h3>API documentation</h3>
+        <p>Browse the generated API reference for every module version used by your project.</p>
+        <span class="card-link">Browse the docs &rarr;</span>
+    </a>
+    <a class="card" href="https://github.com/Udrian" rel="noopener">
+        <h3>Samples</h3>
+        <p>Look at sample games like Breakout and SpaceInvader to see complete TypeO projects in action.</p>
+        <span class="card-link">Find them on GitHub &rarr;</span>
+    </a>
+</div>

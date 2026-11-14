@@ -1,0 +1,28 @@
+# Documentation update notification for module repositories
+#
+# Copy this file into a module repository as .github/workflows/notify-website.yml to make
+# typeo.typedeaf.com regenerate its documentation as soon as a version tag (x.y.z) is pushed.
+# Without it the website still picks new tags up through its daily scheduled run.
+#
+# Requires a repository secret WEBSITE_DISPATCH_TOKEN: a fine-grained personal access token
+# with "Contents: read and write" permission on Udrian/typeo_web (or a classic PAT with
+# the repo scope).
+
+name: Notify TypeO website
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger documentation update
+        run: |
+          curl -sS -f -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.WEBSITE_DISPATCH_TOKEN }}" \
+            https://api.github.com/repos/Udrian/typeo_web/dispatches \
+            -d "{\"event_type\":\"module-release\",\"client_payload\":{\"module\":\"${GITHUB_REPOSITORY#*/}\",\"tag\":\"${GITHUB_REF_NAME}\"}}"

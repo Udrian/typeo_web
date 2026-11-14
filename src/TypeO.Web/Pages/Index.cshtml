@@ -1,0 +1,67 @@
+@page
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero">
+    <img src="~/img/logo.svg" alt="TypeO logo" class="hero-logo" />
+    <h1>Type<span class="brand-accent">Ditor</span></h1>
+    <p class="tagline">TypeO &bull; Game Editor &mdash; an open source game engine and editor for .NET</p>
+    <div class="hero-actions">
+        <a class="button primary" asp-page="/Download">Download TypeDitor</a>
+        <a class="button secondary" asp-page="/GettingStarted">Getting Started</a>
+    </div>
+</section>
+
+<h2>Welcome</h2>
+<p>
+    <strong>TypeO</strong> is a modular game engine for .NET and <strong>TypeDitor</strong> is its editor.
+    You write your game in C#, while TypeDitor manages your project, components and scenes,
+    builds your code and lets you run and inspect your game right inside the editor viewport.
+    Everything is split into <a asp-page="/Modules">modules</a> &mdash; pick the ones your game needs,
+    or write your own to extend both the engine and the editor itself.
+</p>
+<p>New here? This is a good path to follow:</p>
+
+<div class="card-grid">
+    <a class="card" asp-page="/Download">
+        <h3>1. Download</h3>
+        <p>Grab TypeDater for Windows or Linux. It installs TypeDitor for you and keeps it up to date.</p>
+        <span class="card-link">Go to downloads &rarr;</span>
+    </a>
+    <a class="card" asp-page="/GettingStarted">
+        <h3>2. Getting Started</h3>
+        <p>Install the editor, set up the prerequisites and build your first small game step by step.</p>
+        <span class="card-link">Start the guide &rarr;</span>
+    </a>
+    <a class="card" asp-page="/Modules">
+        <h3>3. Modules</h3>
+        <p>Learn how TypeO modules are set up, how to use them in your project and how to create your own.</p>
+        <span class="card-link">Learn about modules &rarr;</span>
+    </a>
+    <a class="card" asp-page="/Documentation/Index">
+        <h3>4. Documentation</h3>
+        <p>Browse the generated API documentation for every module and version, from TypeOCore to TypeD.</p>
+        <span class="card-link">Browse the API docs &rarr;</span>
+    </a>
+</div>
+
+<h2>What's in the box?</h2>
+<div class="card-grid">
+    <div class="card">
+        <h3>TypeDitor</h3>
+        <p>The game editor. Project management, component editing, code generation, a live game viewport with editor tools, and hot reload of your modules while you work.</p>
+    </div>
+    <div class="card">
+        <h3>TypeO engine modules</h3>
+        <p>TypeOCore drives the game loop, entities and scenes. Add TypeOBasic2d for 2D games, TypeODesktop for windowing and input, and TypeOTK for OpenGL rendering.</p>
+    </div>
+    <div class="card">
+        <h3>typer</h3>
+        <p>The command line companion. Generates project files, resolves module dependencies, builds, packs and publishes modules &mdash; the same tool TypeDitor uses under the hood.</p>
+    </div>
+    <div class="card">
+        <h3>Open source</h3>
+        <p>The whole stack lives on <a href="https://github.com/Udrian" rel="noopener">GitHub</a>. Read the code, report issues or contribute your own modules.</p>
+    </div>
+</div>

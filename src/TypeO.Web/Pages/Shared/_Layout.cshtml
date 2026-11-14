@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] != null ? $"{ViewData["Title"]} - TypeO" : "TypeO - Game Editor")</title>
+    <meta name="description" content="TypeO and TypeDitor - an open source game engine and editor for .NET." />
+    <link rel="icon" type="image/svg+xml" href="~/img/logo.svg" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="brand" href="/">
+                <img src="~/img/logo.svg" alt="TypeO logo" class="brand-logo" />
+                <span class="brand-name">Type<span class="brand-accent">O</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a asp-page="/GettingStarted">Getting Started</a></li>
+                <li><a asp-page="/Modules">Modules</a></li>
+                <li><a asp-page="/Documentation/Index">Documentation</a></li>
+                <li><a asp-page="/About">About</a></li>
+                <li><a asp-page="/Download" class="nav-cta">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="@(ViewData["FullWidth"] as bool? == true ? "site-main full-width" : "site-main")">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <span class="brand-name">Type<span class="brand-accent">O</span></span>
+                <p class="footer-tagline">An open source game engine and editor for .NET.</p>
+            </div>
+            <div class="footer-links">
+                <a asp-page="/GettingStarted">Getting Started</a>
+                <a asp-page="/Documentation/Index">Documentation</a>
+                <a asp-page="/Download">Download</a>
+                <a href="https://github.com/Udrian" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

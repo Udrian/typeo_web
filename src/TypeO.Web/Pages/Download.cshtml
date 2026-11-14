@@ -1,0 +1,43 @@
+@page
+@model DownloadModel
+@{
+    ViewData["Title"] = "Download";
+}
+
+<h1>Download</h1>
+
+<p>
+    TypeDitor is installed and kept up to date by <strong>TypeDater</strong>, a small installer and updater.
+    Download it for your platform, put it in the folder where you want TypeDitor installed and run it &mdash;
+    it fetches the latest TypeDitor release, builds it and creates the editor for you.
+    The same executable later updates your installation whenever a new version is released.
+</p>
+
+<div class="download-grid">
+    @foreach (var target in Model.Downloads.Targets)
+    {
+        <div class="download-card">
+            <h3>@target.Name</h3>
+            <p class="rid">@target.Rid</p>
+            <p class="muted">@target.Description</p>
+            <a class="button primary" href="@target.Url" rel="noopener">Download</a>
+        </div>
+    }
+</div>
+
+<p class="muted" style="margin-top:1.5rem">
+    Looking for an older release or checksums? All TypeDater releases are available on the
+    <a href="@Model.Downloads.ReleasesUrl" rel="noopener">GitHub releases page</a>.
+</p>
+
+<h2>Before you install</h2>
+<p>TypeDater builds TypeDitor from source on your machine, so a few tools need to be installed first:</p>
+<ul>
+    <li><a href="https://dotnet.microsoft.com/download" rel="noopener">.NET SDK 10.0</a> or later</li>
+    <li><a href="https://git-scm.com/" rel="noopener">Git</a></li>
+    <li><a href="https://www.python.org/downloads/" rel="noopener">Python 3</a> (used by the typer tooling)</li>
+</ul>
+<p>
+    See the <a asp-page="/GettingStarted">Getting Started guide</a> for a full walkthrough of the installation
+    and your first project.
+</p>

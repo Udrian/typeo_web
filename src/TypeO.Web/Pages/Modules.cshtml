@@ -1,0 +1,143 @@
+@page
+@{
+    ViewData["Title"] = "Modules";
+}
+
+<h1>Modules</h1>
+
+<p>
+    Everything in TypeO is a module: the engine core, 2D support, platform backends and even the
+    features of the TypeDitor editor itself. A module is a versioned C# library, described by a
+    <code>typeo.json</code> file and distributed through a GitHub repository with version tags.
+    This page explains how modules are set up, how you use them in a project, and how to create your own.
+</p>
+
+<h2>Using modules in a project</h2>
+<p>
+    Your game project also has a <code>typeo.json</code>. Its <code>dependencies</code> list names the modules
+    (and NuGet packages) it uses. Modules are referenced as <code>Author@Module-version</code>:
+</p>
+<pre><code>{
+  "name": "MyGame",
+  "version": "0.1.0",
+  "type": "exe",
+  "dependencies": [
+    "Udrian@TypeOCore-1.1.0",
+    "Udrian@TypeOBasic2d-1.0.1",
+    "Udrian@TypeODesktop-1.1.0",
+    "Udrian@TypeOTK-1.0.0"
+  ],
+  "project": [
+    { "Name": "MyGame", "type": "" }
+  ]
+}</code></pre>
+<p>
+    You normally manage this from TypeDitor: add or update a module in the project settings and the editor
+    resolves the whole dependency graph, downloads each module version into the local modules cache
+    (<code>{cache}/{author}/{name}/{version}</code>), builds them and loads them &mdash; including any
+    editor extensions the module ships. The same works from the command line with
+    <code>typer dependency -p &lt;project&gt;</code>.
+</p>
+
+<h2>How a module is set up</h2>
+<p>
+    A module repository carries no <code>.csproj</code> or solution files &mdash; only sources plus
+    <code>typeo.json</code>, from which <code>typer generate</code> creates the project files. A typical
+    module defines up to three kinds of projects:
+</p>
+<table>
+    <thead>
+        <tr><th>Project type</th><th>Meaning</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>""</code> (game)</td>
+            <td>The runtime library that games reference. Loaded when your game runs.</td>
+        </tr>
+        <tr>
+            <td><code>"dev"</code> (editor)</td>
+            <td>An optional editor extension, loaded by TypeDitor. It can add panels, viewers, tools and
+                commands to the editor through the TypeD framework.</td>
+        </tr>
+        <tr>
+            <td><code>"test"</code></td>
+            <td>Unit tests for the module. Never shipped.</td>
+        </tr>
+    </tbody>
+</table>
+<p>As an example, this is a trimmed version of TypeOTK's <code>typeo.json</code>:</p>
+<pre><code>{
+  "name": "TypeOTK",
+  "version": "1.0.0",
+  "type": "module",
+  "externals": [
+    "Shaders/tshader.frag",
+    "Assets/Icons/**;dev"
+  ],
+  "dependencies": [
+    "Udrian@TypeOCore-1.0.0",
+    "Udrian@TypeD-1.0.0;dev",
+    "OpenTK-4.9.4;nuget",
+    "Avalonia-12.1.4;nuget;dev"
+  ],
+  "project": [
+    { "Name": "TypeOTK",     "type": "" },
+    { "Name": "TypeDTK",     "type": "dev",  "depends_on": [ "TypeOTK" ] },
+    { "Name": "TypeOTKTest", "type": "test", "depends_on": [ "TypeOTK", "TypeDTK" ] }
+  ]
+}</code></pre>
+<ul>
+    <li>
+        <strong>Dependencies</strong> &mdash; <code>Author@Module-version</code> references another module;
+        adding <code>;nuget</code> makes it a NuGet package reference instead. A trailing <code>;dev</code> or
+        <code>;test</code> scopes the dependency to the editor or test project only.
+    </li>
+    <li>
+        <strong>Externals</strong> &mdash; files (shaders, assets) copied into the consuming project when the
+        module is loaded. Untagged entries go to games, <code>;dev</code> entries to the editor,
+        <code>;test</code> entries to tests.
+    </li>
+    <li>
+        <strong>Versioning</strong> &mdash; a module version is simply a git tag like <code>1.0.0</code> on the
+        module's repository. Consumers always reference an exact version.
+    </li>
+</ul>
+
+<h2>Creating your own module</h2>
+<ol class="steps">
+    <li>
+        <strong>Create the module.</strong> Make a new git repository, add <a href="https://github.com/Udrian/typer" rel="noopener">typer</a>
+        as a submodule and run <code>typer new</code> (or write <code>typeo.json</code> by hand with
+        <code>"type": "module"</code> and your project list as above). Then run
+        <code>typer generate -p &lt;path&gt;</code> to create the solution and project files.
+    </li>
+    <li>
+        <strong>Write the runtime part.</strong> The game project (type <code>""</code>) contains your module
+        class and the services, entities or other features games will use. Keep its public API documented with
+        XML doc comments &mdash; they become the <a asp-page="/Documentation/Index">generated documentation</a>.
+    </li>
+    <li>
+        <strong>Optionally extend the editor.</strong> Add a <code>dev</code> project that depends on
+        <code>Udrian@TypeD;dev</code>. Its initializer can register panels, viewers, toolbar tools and commands
+        when TypeDitor loads the module, and must clean them up again in its uninitializer so the module can be
+        hot reloaded.
+    </li>
+    <li>
+        <strong>Test locally.</strong> In a test game project, add a <code>typeo_override.json</code> that points
+        your module name at the local checkout &mdash; TypeDitor then builds and hot reloads it from source while
+        you develop (<code>typer addoverride</code> sets this up).
+    </li>
+    <li>
+        <strong>Release a version.</strong> Push the repository to GitHub and tag a release, e.g.
+        <code>1.0.0</code>. Anyone can now depend on <code>You@YourModule-1.0.0</code>. Tagged versions also show
+        up in the <a asp-page="/Documentation/Index">documentation browser</a> once they are indexed.
+    </li>
+</ol>
+
+<h2>How modules load</h2>
+<ul>
+    <li>Modules initialize in dependency order &mdash; dependencies first &mdash; and deinitialize in reverse.</li>
+    <li>TypeDitor builds modules with the .NET SDK and loads each one in its own collectible load context, which is what makes in-editor hot reload possible.</li>
+    <li>External NuGet dependencies are shared across modules, so static state (like GL bindings) stays unified.</li>
+    <li>Editor (<code>dev</code>) projects are only ever loaded by TypeDitor; your shipped game loads just the runtime projects.</li>
+</ul>

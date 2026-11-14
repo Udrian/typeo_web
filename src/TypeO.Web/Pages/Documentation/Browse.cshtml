@@ -1,0 +1,148 @@
+@page "/documentation/{moduleName}/{version?}/{**typeId}"
+@model TypeO.Web.Pages.Documentation.BrowseModel
+@{
+    ViewData["Title"] = Model.SelectedType != null
+        ? $"{Model.SelectedType.Name} - {Model.Module.Name} {Model.Version}"
+        : $"{Model.Module.Name} {Model.Version} documentation";
+    ViewData["FullWidth"] = true;
+}
+
+@if (Model.Documentation == null)
+{
+    <h1>@Model.Module.Name</h1>
+    <p>@Model.Module.Description</p>
+    <p class="muted">
+        No documentation has been generated for @Model.Module.Name yet. It will appear here automatically
+        once a release version is tagged on
+        <a href="@Model.Module.GitHubUrl" rel="noopener">@Model.Module.GitHubUrl</a>.
+    </p>
+    return;
+}
+
+<div class="breadcrumbs">
+    <a asp-page="/Documentation/Index">Documentation</a> /
+    <a href="@Url.Page("/Documentation/Browse", new { moduleName = Model.Module.Name, version = Model.Version })">@Model.Module.Name</a>
+    @if (Model.SelectedType != null)
+    {
+        <text>/ @Model.SelectedType.Name</text>
+    }
+</div>
+
+<div class="docs-toolbar">
+    <h1>@Model.Module.Name</h1>
+    <select class="version-select" aria-label="Version">
+        @foreach (var version in Model.Versions)
+        {
+            <option value="@Model.VersionUrl(version)" selected="@(version == Model.Version)">@version</option>
+        }
+    </select>
+    <a class="pill" href="@Model.Module.GitHubUrl" rel="noopener">GitHub ↗</a>
+</div>
+
+<div class="docs-layout">
+    <aside class="docs-sidebar">
+        <h2>API</h2>
+        <input class="docs-filter" type="search" placeholder="Filter types..." aria-label="Filter types" />
+        @foreach (var project in Model.Documentation.Projects)
+        {
+            <details class="project-group" open>
+                <summary>@project.Name <span class="muted">(@(project.Kind == "editor" ? "editor" : "game"))</span></summary>
+                @foreach (var ns in project.Namespaces)
+                {
+                    <div class="docs-namespace">
+                        <span class="ns-name">@ns.Name</span>
+                        <ul>
+                            @foreach (var type in ns.Types)
+                            {
+                                <li>
+                                    <a href="@Model.TypeUrl(type)"
+                                       class="@(Model.SelectedType?.Id == type.Id ? "active" : null)"
+                                       title="@($"{type.Namespace}.{type.Name}")">@type.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </details>
+        }
+    </aside>
+
+    <article class="docs-content">
+        @if (Model.SelectedType == null)
+        {
+            if (Model.TypeNotFound)
+            {
+                <p class="muted">The requested type does not exist in version @Model.Version. Showing the module overview instead.</p>
+            }
+            <h2 style="margin-top:0;border:none">@Model.Module.Name @Model.Version</h2>
+            <p>@Model.Module.Description</p>
+            @foreach (var project in Model.Documentation.Projects)
+            {
+                var typeCount = project.Namespaces.Sum(n => n.Types.Count);
+                <h3>@project.Name <span class="pill">@(project.Kind == "editor" ? "editor (TypeDitor) library" : "game library")</span></h3>
+                <p class="muted">@typeCount public type@(typeCount == 1 ? "" : "s") in @project.Namespaces.Count namespace@(project.Namespaces.Count == 1 ? "" : "s").</p>
+                <ul>
+                    @foreach (var ns in project.Namespaces)
+                    {
+                        <li><strong>@ns.Name</strong> &mdash; @ns.Types.Count type@(ns.Types.Count == 1 ? "" : "s")</li>
+                    }
+                </ul>
+            }
+            <p class="muted">Select a type in the sidebar to view its documentation.</p>
+        }
+        else
+        {
+            var type = Model.SelectedType;
+            <span class="type-kind">@type.Kind</span>
+            <h2 style="margin-top:.25rem;border:none">@type.Name</h2>
+            <p class="muted">Namespace: <code>@type.Namespace</code></p>
+            <pre><code>@type.Signature</code></pre>
+            @if (type.Summary != null)
+            {
+                <p>@type.Summary</p>
+            }
+            @if (type.Remarks != null)
+            {
+                <p class="muted">@type.Remarks</p>
+            }
+
+            @foreach (var (heading, members) in TypeO.Web.Pages.Documentation.BrowseModel.MemberGroups(type))
+            {
+                <h3>@heading</h3>
+                foreach (var member in members)
+                {
+                    <div class="member" id="@member.Id">
+                        <pre class="signature"><code>@member.Signature</code></pre>
+                        @if (member.Summary != null)
+                        {
+                            <p>@member.Summary</p>
+                        }
+                        @if (member.Parameters.Count > 0)
+                        {
+                            <table class="param-table">
+                                <tbody>
+                                    @foreach (var parameter in member.Parameters)
+                                    {
+                                        <tr>
+                                            <td>@parameter.Name</td>
+                                            <td><code>@parameter.Type</code></td>
+                                            <td class="muted">@parameter.Description</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        @if (member.Returns != null)
+                        {
+                            <p><strong>Returns:</strong> <span class="muted">@member.Returns</span></p>
+                        }
+                        @if (member.Remarks != null)
+                        {
+                            <p class="muted">@member.Remarks</p>
+                        }
+                    </div>
+                }
+            }
+        }
+    </article>
+</div>

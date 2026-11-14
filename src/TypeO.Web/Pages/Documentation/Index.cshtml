@@ -1,0 +1,40 @@
+@page "/documentation"
+@model TypeO.Web.Pages.Documentation.IndexModel
+@{
+    ViewData["Title"] = "Documentation";
+}
+
+<h1>Documentation</h1>
+
+<p>
+    API reference for every TypeO module, generated from the XML documentation of each released version.
+    Pick a module to browse its namespaces and types; every released version of a module is available
+    through the version selector.
+</p>
+
+<div class="card-grid">
+    @foreach (var module in Model.Documentation.Modules)
+    {
+        var versions = Model.Documentation.GetVersions(module.Name);
+        <a class="card" asp-page="/Documentation/Browse" asp-route-moduleName="@module.Name" asp-route-version="@versions.FirstOrDefault()">
+            <h3>@module.Name</h3>
+            <p>@module.Description</p>
+            <span>
+                @if (versions.Count > 0)
+                {
+                    <span class="pill accent">latest: @versions.First()</span>
+                    <span class="pill">@versions.Count version@(versions.Count == 1 ? "" : "s")</span>
+                }
+                else
+                {
+                    <span class="pill">no documentation yet</span>
+                }
+            </span>
+        </a>
+    }
+</div>
+
+<p class="muted">
+    Documentation is produced from each module repository with the C# compiler's
+    <code>GenerateDocumentationFile</code> output and refreshed automatically when a new version tag is pushed.
+</p>

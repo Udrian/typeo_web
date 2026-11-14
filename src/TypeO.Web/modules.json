@@ -1,0 +1,34 @@
+{
+  "modules": [
+    {
+      "name": "TypeOCore",
+      "owner": "Udrian",
+      "repo": "typeocore",
+      "description": "The core TypeO game framework. Provides the game loop, entities, scenes, services, contents and the base APIs every other module builds on."
+    },
+    {
+      "name": "TypeOBasic2d",
+      "owner": "Udrian",
+      "repo": "typeobasic2d",
+      "description": "2D building blocks for TypeO games: 2D entities, drawables, sprites and scene primitives."
+    },
+    {
+      "name": "TypeODesktop",
+      "owner": "Udrian",
+      "repo": "typeodesktop",
+      "description": "Desktop platform support: window management, keyboard and mouse hardware and input services."
+    },
+    {
+      "name": "TypeOTK",
+      "owner": "Udrian",
+      "repo": "typeotk",
+      "description": "OpenTK based rendering backend: OpenGL canvas, shaders, textures and font rendering."
+    },
+    {
+      "name": "TypeD",
+      "owner": "Udrian",
+      "repo": "typed",
+      "description": "The TypeDitor editor framework. Provides the models, hooks, views and APIs that editor (dev) module projects extend TypeDitor with."
+    }
+  ]
+}
