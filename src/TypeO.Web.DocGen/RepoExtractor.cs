@@ -28,7 +28,10 @@ public static class RepoExtractor
             var binDir = Path.Combine(repoPath, project.Name, "bin", configuration, "net10.0");
             var assemblyPath = Path.Combine(binDir, project.Name + ".dll");
             if (!File.Exists(assemblyPath))
-                throw new FileNotFoundException($"Built assembly not found: {assemblyPath}. Build the project first.");
+            {
+                Console.Error.WriteLine($"warning: skipping project {project.Name}: built assembly not found at {assemblyPath}");
+                continue;
+            }
 
             var xmlPath = Path.Combine(binDir, project.Name + ".xml");
             var kind = project.Type == "dev" ? "editor" : "game";
@@ -40,6 +43,10 @@ public static class RepoExtractor
                 kind,
                 binDirs.Where(d => d != binDir)));
         }
+
+        if (documentation.Projects.Count == 0)
+            throw new InvalidOperationException(
+                $"No built assemblies found for {typeo.Name}. Build the module first.");
 
         return documentation;
     }

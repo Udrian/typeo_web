@@ -16,7 +16,7 @@ try
             var documentation = RepoExtractor.Extract(
                 Path.GetFullPath(repo),
                 options.GetValueOrDefault("version"),
-                options.GetValueOrDefault("config", "Release"));
+                options.GetValueOrDefault("config", "Debug"));
             RepoExtractor.Write(documentation, Path.GetFullPath(output));
             return 0;
         }
@@ -49,7 +49,7 @@ static int Usage()
         TypeO.Web.DocGen - generates API documentation JSON for TypeO modules.
 
         Usage:
-          docgen extract --repo <path> --output <docs-data-dir> [--version <version>] [--config Release]
+          docgen extract --repo <path> --output <docs-data-dir> [--version <version>] [--config Debug]
               Extracts documentation from an already generated and built module repository.
 
           docgen update --modules <modules.json> --output <docs-data-dir>

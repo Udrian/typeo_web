@@ -5,19 +5,23 @@
 # on every push (including the automatic documentation updates). To deploy a new version,
 # just pull + restart the stack from the Dockge UI.
 #
-# If the ghcr.io package is private, log the server in first:
+# The ghcr.io package is private by default. Either make it public
+# (repo -> Packages -> typeo-web -> Package settings -> Change visibility),
+# or log the server in first:
 #   docker login ghcr.io -u <github-user> -p <token with read:packages>
 
 services:
   typeo-web:
     image: ghcr.io/udrian/typeo-web:latest
-    # Alternative without a registry: build straight from the GitHub repository instead
-    # of pulling the image (comment out "image:" above and uncomment the next line):
-    # build: https://github.com/Udrian/typeo_web.git#develop
+    # Alternative without a registry: build straight from the GitHub repository.
+    # Replace the "image:" line above with the following (note: build, not image):
+    #   build: https://github.com/Udrian/typeo_web.git#develop
     container_name: typeo-web
     restart: unless-stopped
     ports:
-      # host:container - point the reverse proxy for typeo.typedeaf.com at this port.
-      - "8080:8080"
+      # host:container - the app inside the container always listens on 8080;
+      # only change the left-hand (host) port, then point the reverse proxy
+      # for typeo.typedeaf.com at it.
+      - "8085:8080"
     environment:
       - ASPNETCORE_FORWARDEDHEADERS_ENABLED=true

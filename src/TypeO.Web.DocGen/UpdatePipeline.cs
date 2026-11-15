@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Xml;
 using TypeO.Web.Docs;
 
 namespace TypeO.Web.DocGen;
@@ -108,17 +109,37 @@ public class UpdatePipeline
             Proc.Run(PythonExecutable, $"\"{Path.Combine(cloneDir, "typer", "typer.py")}\" generate -p \"{cloneDir}\"", cloneDir);
 
             var typeo = TypeoJson.Load(cloneDir);
+            AlignPinnedPackageVersions(cloneDir, typeo);
+
+            var builtProjects = new List<string>();
             foreach (var project in typeo.Projects.Where(p => p.Type != "test"))
             {
                 var csproj = Path.Combine(cloneDir, project.Name, project.Name + ".csproj");
-                Proc.Run("dotnet",
-                    $"build \"{csproj}\" -c Release " +
-                    "-p:GenerateDocumentationFile=true " +
-                    "-p:CopyLocalLockFileAssemblies=true " +
-                    "-p:TypeODependenciesResolved=true");
+                try
+                {
+                    Proc.Run("dotnet",
+                        $"build \"{csproj}\" -c Debug " +
+                        "-p:GenerateDocumentationFile=true " +
+                        "-p:CopyLocalLockFileAssemblies=true " +
+                        "-p:TypeODependenciesResolved=true " +
+                        // Older module tags pin package versions that transitively downgrade
+                        // (e.g. Avalonia via Dock.Model.Avalonia). They built that way historically,
+                        // so don't let NU1605 fail documentation builds.
+                        "-p:NoWarn=NU1605");
+                    builtProjects.Add(project.Name);
+                }
+                catch (Exception ex)
+                {
+                    // Document the projects that do build instead of dropping the whole version.
+                    Console.Error.WriteLine($"warning: {module.Name} {tag}: project {project.Name} failed to build " +
+                                            $"and will be missing from the documentation: {ex.Message}");
+                }
             }
 
-            var documentation = RepoExtractor.Extract(cloneDir, tag, "Release");
+            if (builtProjects.Count == 0)
+                throw new InvalidOperationException("No project of the module could be built.");
+
+            var documentation = RepoExtractor.Extract(cloneDir, tag, "Debug");
             RepoExtractor.Write(documentation, OutputDir);
         }
         finally
@@ -135,6 +156,46 @@ public class UpdatePipeline
                     Console.Error.WriteLine($"warning: could not clean up {cloneDir}: {ex.Message}");
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// typer generate creates dev projects from the installed "avalonia.app" dotnet template, which
+    /// injects package references at the template's (current) Avalonia version. For old tags that
+    /// version can be newer than the versions pinned in the module's typeo.json, breaking restore and
+    /// the Avalonia XAML compiler. Rewrite any generated PackageReference back to the pinned version.
+    /// </summary>
+    private static void AlignPinnedPackageVersions(string cloneDir, TypeoJson typeo)
+    {
+        var pins = typeo.NugetDependencyVersions();
+        if (pins.Count == 0)
+            return;
+
+        foreach (var project in typeo.Projects.Where(p => p.Type != "test"))
+        {
+            var csprojPath = Path.Combine(cloneDir, project.Name, project.Name + ".csproj");
+            if (!File.Exists(csprojPath))
+                continue;
+
+            var csproj = new XmlDocument();
+            csproj.Load(csprojPath);
+
+            var changed = false;
+            foreach (var package in csproj.GetElementsByTagName("PackageReference").Cast<XmlElement>())
+            {
+                var name = package.GetAttribute("Include");
+                var version = package.GetAttribute("Version");
+                if (name.Length > 0 && version.Length > 0 &&
+                    pins.TryGetValue(name, out var pinned) && version != pinned)
+                {
+                    Console.WriteLine($"{project.Name}: aligning {name} {version} -> {pinned} (typeo.json pin)");
+                    package.SetAttribute("Version", pinned);
+                    changed = true;
+                }
+            }
+
+            if (changed)
+                csproj.Save(csprojPath);
         }
     }
 

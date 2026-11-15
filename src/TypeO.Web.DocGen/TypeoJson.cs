@@ -7,6 +7,7 @@ public class TypeoJson
 {
     public string Name { get; set; } = "";
     public string Version { get; set; } = "";
+    public List<string> Dependencies { get; set; } = new();
     public List<TypeoProject> Projects { get; set; } = new();
 
     public static TypeoJson Load(string repoPath)
@@ -21,6 +22,16 @@ public class TypeoJson
             Version = root.TryGetProperty("version", out var v) ? v.GetString() ?? "" : "",
         };
 
+        if (root.TryGetProperty("dependencies", out var dependencies))
+        {
+            foreach (var dependency in dependencies.EnumerateArray())
+            {
+                var value = dependency.GetString();
+                if (!string.IsNullOrEmpty(value))
+                    result.Dependencies.Add(value);
+            }
+        }
+
         if (root.TryGetProperty("project", out var projects))
         {
             foreach (var project in projects.EnumerateArray())
@@ -34,6 +45,23 @@ public class TypeoJson
         }
 
         return result;
+    }
+
+    /// <summary>NuGet package versions pinned in the dependencies list ("Name-version;nuget[;dev|;test]").</summary>
+    public Dictionary<string, string> NugetDependencyVersions()
+    {
+        var pins = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var dependency in Dependencies)
+        {
+            var parts = dependency.Split(';');
+            if (!parts.Skip(1).Contains("nuget"))
+                continue;
+            var separator = parts[0].LastIndexOf('-');
+            if (separator <= 0)
+                continue;
+            pins[parts[0][..separator]] = parts[0][(separator + 1)..];
+        }
+        return pins;
     }
 }
 
