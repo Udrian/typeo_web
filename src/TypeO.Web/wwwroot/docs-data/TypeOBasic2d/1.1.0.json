@@ -1,0 +1,2086 @@
+{
+  "module": "TypeOBasic2d",
+  "version": "1.1.0",
+  "generatedAtUtc": "2026-11-22T23:08:43.1545583Z",
+  "projects": [
+    {
+      "name": "TypeOBasic2d",
+      "kind": "game",
+      "namespaces": [
+        {
+          "name": "TypeOEngine.Typedeaf.Basic2d",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Basic2d.Basic2dModule",
+              "name": "Basic2dModule",
+              "namespace": "TypeOEngine.Typedeaf.Basic2d",
+              "kind": "Class",
+              "signature": "public class Basic2dModule : Module\u003CModuleOption\u003E",
+              "summary": "Module for drawing and handling 2d, need a module that access low level hardwares",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Basic2dModule.#ctor",
+                  "name": "Basic2dModule",
+                  "kind": "Constructor",
+                  "signature": "public Basic2dModule()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Basic2dModule.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Basic2dModule.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Basic2dModule.LoadExtensions(TypeOEngine.Typedeaf.Core.Engine.TypeO)",
+                  "name": "LoadExtensions",
+                  "kind": "Method",
+                  "signature": "protected override void LoadExtensions(TypeO typeO)",
+                  "parameters": [
+                    {
+                      "name": "typeO",
+                      "type": "TypeO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Basic2d.Engine",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Basic2d.Engine.EntityList",
+              "name": "EntityList",
+              "namespace": "TypeOEngine.Typedeaf.Basic2d.Engine",
+              "kind": "Class",
+              "signature": "public static class EntityList",
+              "summary": "Basic2d extension class of Core EntityList",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.EntityList.Create(TypeOEngine.Typedeaf.Core.Engine.EntityList,System.Type,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Double,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.String,System.Boolean,System.Boolean)",
+                  "name": "Create",
+                  "kind": "Method",
+                  "signature": "public static Entity Create(EntityList entityList, Type type, Vec2? position, Vec2? scale = null, double rotation = 0, Vec2? origin = null, string id = null, bool pushToUpdateLoop = true, bool pushToDrawStack = true)",
+                  "summary": "Creates an Entities.Entity2d of the given type and applies the transform values.",
+                  "returns": "The created entity.",
+                  "parameters": [
+                    {
+                      "name": "entityList",
+                      "type": "EntityList",
+                      "description": "The entity list to create the entity in."
+                    },
+                    {
+                      "name": "type",
+                      "type": "Type",
+                      "description": "The entity type to create."
+                    },
+                    {
+                      "name": "position",
+                      "type": "Vec2?",
+                      "description": "The position, or null to keep the default."
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2?",
+                      "description": "The scale, or null to keep the default."
+                    },
+                    {
+                      "name": "rotation",
+                      "type": "double",
+                      "description": "The rotation."
+                    },
+                    {
+                      "name": "origin",
+                      "type": "Vec2?",
+                      "description": "The origin, or null to keep the default."
+                    },
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "description": "The optional entity id."
+                    },
+                    {
+                      "name": "pushToUpdateLoop",
+                      "type": "bool",
+                      "description": "Whether to add the entity to the update loop."
+                    },
+                    {
+                      "name": "pushToDrawStack",
+                      "type": "bool",
+                      "description": "Whether to add the entity to the draw stack."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.EntityList.Create\u0060\u00601(TypeOEngine.Typedeaf.Core.Engine.EntityList,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Double,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.String,System.Boolean,System.Boolean)",
+                  "name": "Create\u003CE\u003E",
+                  "kind": "Method",
+                  "signature": "public static E Create\u003CE\u003E(EntityList entityList, Vec2? position, Vec2? scale = null, double rotation = 0, Vec2? origin = null, string id = null, bool pushToUpdateLoop = true, bool pushToDrawStack = true)",
+                  "summary": "Creates an entity of type E and applies the transform values.",
+                  "returns": "The created entity.",
+                  "parameters": [
+                    {
+                      "name": "entityList",
+                      "type": "EntityList",
+                      "description": "The entity list to create the entity in."
+                    },
+                    {
+                      "name": "position",
+                      "type": "Vec2?",
+                      "description": "The position, or null to keep the default."
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2?",
+                      "description": "The scale, or null to keep the default."
+                    },
+                    {
+                      "name": "rotation",
+                      "type": "double",
+                      "description": "The rotation."
+                    },
+                    {
+                      "name": "origin",
+                      "type": "Vec2?",
+                      "description": "The origin, or null to keep the default."
+                    },
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "description": "The optional entity id."
+                    },
+                    {
+                      "name": "pushToUpdateLoop",
+                      "type": "bool",
+                      "description": "Whether to add the entity to the update loop."
+                    },
+                    {
+                      "name": "pushToDrawStack",
+                      "type": "bool",
+                      "description": "Whether to add the entity to the draw stack."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d",
+              "name": "Canvas2d",
+              "namespace": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics",
+              "kind": "Class",
+              "signature": "public static class Canvas2d",
+              "summary": "Extension class for ICanvas",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawImage(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Engine.Contents.Texture,TypeOEngine.Typedeaf.Core.Common.Vec2,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Double,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Nullable{TypeOEngine.Typedeaf.Core.Common.Color},TypeOEngine.Typedeaf.Core.Entities.Flipped,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Rectangle},TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawImage",
+                  "kind": "Method",
+                  "signature": "public static void DrawImage(ICanvas canvas, Texture texture, Vec2 pos, Vec2? scale = null, double rotation = 0, Vec2? origin = null, Color? color = null, Flipped flipped = 0, Rectangle? source = null, IAnchor2d anchor = null)",
+                  "summary": "Draws a texture on screen",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the texture on"
+                    },
+                    {
+                      "name": "texture",
+                      "type": "Texture",
+                      "description": "Texture to draw"
+                    },
+                    {
+                      "name": "pos",
+                      "type": "Vec2",
+                      "description": "Left right corner of the texture"
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2?",
+                      "description": "Texture scale"
+                    },
+                    {
+                      "name": "rotation",
+                      "type": "double",
+                      "description": "Texture rotation"
+                    },
+                    {
+                      "name": "origin",
+                      "type": "Vec2?",
+                      "description": "Texture position origin"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color?",
+                      "description": "Color overlay for the texture"
+                    },
+                    {
+                      "name": "flipped",
+                      "type": "Flipped",
+                      "description": "Flipped position of texture, vertically, horizontally or both"
+                    },
+                    {
+                      "name": "source",
+                      "type": "Rectangle?",
+                      "description": "Rectangle within where the texture should be contained, will clip texture outside of the bounds"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawLine(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawLine",
+                  "kind": "Method",
+                  "signature": "public static void DrawLine(ICanvas canvas, Vec2 pos, Vec2 size, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a line given a position and a size",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the line on"
+                    },
+                    {
+                      "name": "pos",
+                      "type": "Vec2",
+                      "description": "Start position"
+                    },
+                    {
+                      "name": "size",
+                      "type": "Vec2",
+                      "description": "Length vector of the line"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color that the line will have"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawLineA(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawLineA",
+                  "kind": "Method",
+                  "signature": "public static void DrawLineA(ICanvas canvas, Vec2 from, Vec2 to, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a line given absolute starting and end position",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the line on"
+                    },
+                    {
+                      "name": "from",
+                      "type": "Vec2",
+                      "description": "Absolute start position"
+                    },
+                    {
+                      "name": "to",
+                      "type": "Vec2",
+                      "description": "Absolute end position"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color that the line will have"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawLines(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,System.Collections.Generic.List{TypeOEngine.Typedeaf.Core.Common.Vec2},TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawLines",
+                  "kind": "Method",
+                  "signature": "public static void DrawLines(ICanvas canvas, List\u003CVec2\u003E points, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draw multiple lines given a vector of points",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the line on"
+                    },
+                    {
+                      "name": "points",
+                      "type": "List\u003CVec2\u003E",
+                      "description": "Vector of points describing the shape of the lines being drawn"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color that the line will have"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawPixel(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawPixel",
+                  "kind": "Method",
+                  "signature": "public static void DrawPixel(ICanvas canvas, Vec2 point, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a pixel at a given point",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the pixel on"
+                    },
+                    {
+                      "name": "point",
+                      "type": "Vec2",
+                      "description": "Pixel position on the canvas"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the pixel"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawPixels(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,System.Collections.Generic.List{TypeOEngine.Typedeaf.Core.Common.Vec2},TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawPixels",
+                  "kind": "Method",
+                  "signature": "public static void DrawPixels(ICanvas canvas, List\u003CVec2\u003E points, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws multiple pixels given a vector of points",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the pixels on"
+                    },
+                    {
+                      "name": "points",
+                      "type": "List\u003CVec2\u003E",
+                      "description": "Vector of points describing where to draw the pixels"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the pixels"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawRectangle(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2,System.Boolean,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawRectangle",
+                  "kind": "Method",
+                  "signature": "public static void DrawRectangle(ICanvas canvas, Vec2 pos, Vec2 size, bool filled, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a rectangle",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the rectangle on"
+                    },
+                    {
+                      "name": "pos",
+                      "type": "Vec2",
+                      "description": "Starting position of the rectangle"
+                    },
+                    {
+                      "name": "size",
+                      "type": "Vec2",
+                      "description": "Rectangle size"
+                    },
+                    {
+                      "name": "filled",
+                      "type": "bool",
+                      "description": "Draws the rectangle filled or just the outline"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the rectangle"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawRectangle(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Rectangle,System.Boolean,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawRectangle",
+                  "kind": "Method",
+                  "signature": "public static void DrawRectangle(ICanvas canvas, Rectangle rectangle, bool filled, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a rectangle",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the rectangle on"
+                    },
+                    {
+                      "name": "rectangle",
+                      "type": "Rectangle",
+                      "description": "Position and size of the rectangle"
+                    },
+                    {
+                      "name": "filled",
+                      "type": "bool",
+                      "description": "Draws the rectangle filled or just the outline"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the rectangle"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawRectangleA(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2,System.Boolean,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawRectangleA",
+                  "kind": "Method",
+                  "signature": "public static void DrawRectangleA(ICanvas canvas, Vec2 from, Vec2 to, bool filled, Color color, IAnchor2d anchor = null)",
+                  "summary": "Draws a rectangle given absolute starting and end position",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the rectangle on"
+                    },
+                    {
+                      "name": "from",
+                      "type": "Vec2",
+                      "description": "Absolute start position"
+                    },
+                    {
+                      "name": "to",
+                      "type": "Vec2",
+                      "description": "Absolute end position"
+                    },
+                    {
+                      "name": "filled",
+                      "type": "bool",
+                      "description": "Draws the rectangle filled or just the outline"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the rectangle"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Graphics.Canvas2d.DrawText(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas,System.String,TypeOEngine.Typedeaf.Core.Engine.Contents.Font,TypeOEngine.Typedeaf.Core.Common.Vec2,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Double,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Nullable{TypeOEngine.Typedeaf.Core.Common.Color},TypeOEngine.Typedeaf.Core.Entities.Flipped,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Rectangle},TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d)",
+                  "name": "DrawText",
+                  "kind": "Method",
+                  "signature": "public static void DrawText(ICanvas canvas, string text, Font font, Vec2 pos, Vec2? scale = null, double rotation = 0, Vec2? origin = null, Color? color = null, Flipped flipped = 0, Rectangle? source = null, IAnchor2d anchor = null)",
+                  "summary": "Draws a text on screen",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "Canvas to draw the text on"
+                    },
+                    {
+                      "name": "text",
+                      "type": "string",
+                      "description": "Text to draw"
+                    },
+                    {
+                      "name": "font",
+                      "type": "Font",
+                      "description": "Font to use for the text"
+                    },
+                    {
+                      "name": "pos",
+                      "type": "Vec2",
+                      "description": "Left right corner of the text"
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2?",
+                      "description": "Font scaling"
+                    },
+                    {
+                      "name": "rotation",
+                      "type": "double",
+                      "description": "Text rotation"
+                    },
+                    {
+                      "name": "origin",
+                      "type": "Vec2?",
+                      "description": "Text position origin"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color?",
+                      "description": "Color overlay for the text"
+                    },
+                    {
+                      "name": "flipped",
+                      "type": "Flipped",
+                      "description": "Flipped position of text, vertically, horizontally or both"
+                    },
+                    {
+                      "name": "source",
+                      "type": "Rectangle?",
+                      "description": "Rectangle within where the text should be contained, will clip text outside of the bounds"
+                    },
+                    {
+                      "name": "anchor",
+                      "type": "IAnchor2d",
+                      "description": "Transform position anchor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Basic2d.Engine.Services",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService",
+              "name": "BasicCamera2dService",
+              "namespace": "TypeOEngine.Typedeaf.Basic2d.Engine.Services",
+              "kind": "Class",
+              "signature": "public class BasicCamera2dService : Service",
+              "summary": "Provides basic 2D camera functionality for managing the position and translation of a canvas in a 2D world.",
+              "remarks": "This service allows setting and retrieving the camera\u0027s position in the 2D world\nspace through the BasicCamera2dService.Position property. It requires an Interfaces.ICanvas instance to be set\nusing the BasicCamera2dService.SetCanvas method before use.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.#ctor",
+                  "name": "BasicCamera2dService",
+                  "kind": "Constructor",
+                  "signature": "public BasicCamera2dService()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.Canvas",
+                  "name": "Canvas",
+                  "kind": "Property",
+                  "signature": "protected ICanvas Canvas { get; set; }",
+                  "summary": "Gets or sets the canvas used for rendering operations.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2 Position { get; set; }",
+                  "summary": "Gets or sets the position of the canvas in world coordinates.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.Zoom",
+                  "name": "Zoom",
+                  "kind": "Property",
+                  "signature": "public double Zoom { get; set; }",
+                  "summary": "Gets or sets the zoom of the canvas, where 1 is unscaled and 2 draws the world twice as large.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.SetCanvas(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas)",
+                  "name": "SetCanvas",
+                  "kind": "Method",
+                  "signature": "public void SetCanvas(ICanvas canvas)",
+                  "summary": "Sets the canvas to be used for drawing operations.",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "The canvas instance to set. Cannot be null."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "summary": "Performs initialization logic for the derived class.",
+                  "remarks": "This method is called during the initialization phase and can be overridden\nto provide custom setup logic. Ensure that any required resources are properly configured before the\nmethod completes.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Engine.Services.BasicCamera2dService.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "summary": "Releases resources and performs cleanup operations specific to the derived class.",
+                  "remarks": "This method is called to allow the derived class to release unmanaged\nresources, dispose of disposable objects, or perform other cleanup tasks. Override this method to\nimplement custom cleanup logic.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Basic2d.Entities",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Basic2d.Entities.Entity2dOption\u00601",
+              "name": "Entity2dOption\u003CE\u003E",
+              "namespace": "TypeOEngine.Typedeaf.Basic2d.Entities",
+              "kind": "Class",
+              "signature": "public abstract class Entity2dOption\u003CE\u003E : CreateOption\u003CE\u003E",
+              "summary": "Represents an abstract base class for creating options specific to 2D entities.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Basic2d.Entities.Entity2dOption\u00601.#ctor",
+                  "name": "Entity2dOption\u003CE\u003E",
+                  "kind": "Constructor",
+                  "signature": "protected Entity2dOption\u003CE\u003E()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d",
+              "name": "Anchor2d",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+              "kind": "Class",
+              "signature": "public class Anchor2d : IAnchor2d",
+              "summary": "Represents a 2D anchor point that defines a position and orientation relative to a parent entity.",
+              "remarks": "The Entities.Anchor2d class provides a way to specify a position and orientation\nin 2D space, either in absolute coordinates or as a fraction of the parent entity\u0027s size. The anchor\u0027s\nposition and orientation are used to calculate its screen bounds relative to the parent entity.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d.Parent",
+                  "name": "Parent",
+                  "kind": "Property",
+                  "signature": "public Entity2d Parent { get; }",
+                  "summary": "Gets the parent entity of the current 2D entity.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2 Position { get; set; }",
+                  "summary": "Gets or sets the position of the object in 2D space.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d.Orientation",
+                  "name": "Orientation",
+                  "kind": "Property",
+                  "signature": "public Orientation2d Orientation { get; set; }",
+                  "summary": "Gets or sets the 2D orientation of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d.OrientationType",
+                  "name": "OrientationType",
+                  "kind": "Property",
+                  "signature": "public OrientationType OrientationType { get; set; }",
+                  "summary": "Gets or sets the orientation type of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Anchor2d.ScreenBounds",
+                  "name": "ScreenBounds",
+                  "kind": "Property",
+                  "signature": "public Rectangle ScreenBounds { get; set; }",
+                  "summary": "Gets or sets the screen-space bounds of the current object.",
+                  "remarks": "The bounds are determined relative to the parent object\u0027s screen bounds and\nthe object\u0027s orientation. Setting this property adjusts the object\u0027s position relative to its\nparent.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d",
+              "name": "Entity2d",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+              "kind": "Class",
+              "signature": "public abstract class Entity2d : Entity, IAnchor2d",
+              "summary": "Represents a 2D entity with position, scale, rotation, size, and origin properties.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.#ctor",
+                  "name": "Entity2d",
+                  "kind": "Constructor",
+                  "signature": "protected Entity2d()",
+                  "summary": "Initializes a new instance of the Entity2d class with default position, scale, rotation, size, and\norigin values.",
+                  "remarks": "This protected constructor is intended for use by derived classes to ensure\nthat all spatial properties are initialized to their default states.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2 Position { get; set; }",
+                  "summary": "Gets or sets the position represented by a two-dimensional vector.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.Scale",
+                  "name": "Scale",
+                  "kind": "Property",
+                  "signature": "public Vec2 Scale { get; set; }",
+                  "summary": "Gets or sets the scaling factor applied to the object along the X and Y axes.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.Rotation",
+                  "name": "Rotation",
+                  "kind": "Property",
+                  "signature": "public double Rotation { get; set; }",
+                  "summary": "Gets or sets the rotation angle, in degrees, applied to the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2 Size { get; set; }",
+                  "summary": "Gets or sets the two-dimensional size of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.Origin",
+                  "name": "Origin",
+                  "kind": "Property",
+                  "signature": "public Vec2 Origin { get; set; }",
+                  "summary": "Gets or sets the origin point of the object in 2D space.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.ScreenBounds",
+                  "name": "ScreenBounds",
+                  "kind": "Property",
+                  "signature": "public Rectangle ScreenBounds { get; set; }",
+                  "summary": "Gets or sets the bounding rectangle of the entity in screen coordinates.",
+                  "remarks": "Setting this property updates the entity\u0027s position and size relative to its\nparent. The screen bounds are calculated based on the entity\u0027s position and size, as well as the screen\nbounds of its parent if applicable.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Entity2d.CreateAnchor(TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d,TypeOEngine.Typedeaf.TypeOBasic2d.Entities.OrientationType)",
+                  "name": "CreateAnchor",
+                  "kind": "Method",
+                  "signature": "public Anchor2d CreateAnchor(Vec2 anchorPosition, Orientation2d orientation = 0, OrientationType orientationType = 0)",
+                  "summary": "Creates a new 2D anchor at the specified position with the given orientation and orientation type.",
+                  "returns": "A new Anchor2d instance configured with the specified position, orientation, and orientation type.",
+                  "parameters": [
+                    {
+                      "name": "anchorPosition",
+                      "type": "Vec2",
+                      "description": "The position of the anchor in 2D space."
+                    },
+                    {
+                      "name": "orientation",
+                      "type": "Orientation2d",
+                      "description": "The orientation of the anchor relative to its position. Defaults to Orientation2d.UpperLeft."
+                    },
+                    {
+                      "name": "orientationType",
+                      "type": "OrientationType",
+                      "description": "Specifies whether the orientation is interpreted as absolute or relative. Defaults to\nOrientationType.Absolute."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d",
+              "name": "Orientation2d",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+              "kind": "Enum",
+              "signature": "public enum Orientation2d",
+              "summary": "Specifies the corner an entity is oriented from.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d.UpperLeft",
+                  "name": "UpperLeft",
+                  "kind": "EnumValue",
+                  "signature": "UpperLeft = 0",
+                  "summary": "The upper left corner.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d.UpperRight",
+                  "name": "UpperRight",
+                  "kind": "EnumValue",
+                  "signature": "UpperRight = 1",
+                  "summary": "The upper right corner.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d.LowerLeft",
+                  "name": "LowerLeft",
+                  "kind": "EnumValue",
+                  "signature": "LowerLeft = 2",
+                  "summary": "The lower left corner.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Orientation2d.LowerRight",
+                  "name": "LowerRight",
+                  "kind": "EnumValue",
+                  "signature": "LowerRight = 3",
+                  "summary": "The lower right corner.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.OrientationType",
+              "name": "OrientationType",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+              "kind": "Enum",
+              "signature": "public enum OrientationType",
+              "summary": "Specifies how an orientation value is interpreted.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.OrientationType.Absolute",
+                  "name": "Absolute",
+                  "kind": "EnumValue",
+                  "signature": "Absolute = 0",
+                  "summary": "The value is an absolute offset.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.OrientationType.Fraction",
+                  "name": "Fraction",
+                  "kind": "EnumValue",
+                  "signature": "Fraction = 1",
+                  "summary": "The value is a fraction of the size.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.SizeMode",
+              "name": "SizeMode",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities",
+              "kind": "Enum",
+              "signature": "public enum SizeMode",
+              "summary": "Specifies how a drawable texture is rendered within its size bounds.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.SizeMode.Clip",
+                  "name": "Clip",
+                  "kind": "EnumValue",
+                  "signature": "Clip = 0",
+                  "summary": "The texture is drawn at its natural size, clipped at the size boundaries.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.SizeMode.Stretch",
+                  "name": "Stretch",
+                  "kind": "EnumValue",
+                  "signature": "Stretch = 1",
+                  "summary": "The texture is stretched to fit the entire size.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d",
+              "name": "Drawable2d",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public abstract class Drawable2d : Drawable",
+              "summary": "Represents a two-dimensional drawable object with position, size, scale, rotation, and origin properties.",
+              "remarks": "This is a base class for drawable objects in a 2D space. Derived classes can override the Size property\nto define custom dimensions. The class provides a concrete BoundingBox implementation that accounts for position,\norigin, scale, and rotation.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.#ctor",
+                  "name": "Drawable2d",
+                  "kind": "Constructor",
+                  "signature": "protected Drawable2d()",
+                  "summary": "Initializes a new instance of the Drawables.Drawable2d class.",
+                  "remarks": "This constructor sets the initial position of the drawable object to Vec2.Zero,\norigin to Vec2.Zero (top-left), scale to Vec2.One, and rotation to 0 degrees.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2 Position { get; set; }",
+                  "summary": "Gets or sets the position of the object in 2D space.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.Origin",
+                  "name": "Origin",
+                  "kind": "Property",
+                  "signature": "public Vec2 Origin { get; set; }",
+                  "summary": "Gets or sets the origin point that the Position refers to. (0,0) is top-left, (0.5,0.5) is center.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2 Size { get; set; }",
+                  "summary": "Gets or sets the size of the object as a two-dimensional vector.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.Scale",
+                  "name": "Scale",
+                  "kind": "Property",
+                  "signature": "public Vec2 Scale { get; set; }",
+                  "summary": "Gets or sets the scale of the object as a two-dimensional vector.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.Rotation",
+                  "name": "Rotation",
+                  "kind": "Property",
+                  "signature": "public double Rotation { get; set; }",
+                  "summary": "Gets or sets the rotation angle, in degrees.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2d.BoundingBox",
+                  "name": "BoundingBox",
+                  "kind": "Property",
+                  "signature": "public Rectangle BoundingBox { get; }",
+                  "summary": "Gets the rectangular bounding box of the drawable, accounting for position, origin, scale, and rotation.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601",
+              "name": "Drawable2dOption\u003CD\u003E",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class Drawable2dOption\u003CD\u003E : DrawableOption\u003CD\u003E",
+              "summary": "Represents an option for configuring a 2D drawable object.",
+              "remarks": "This class provides configuration options specific to 2D drawable objects, such as\ntheir position, origin, scale, and rotation.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.#ctor",
+                  "name": "Drawable2dOption\u003CD\u003E",
+                  "kind": "Constructor",
+                  "signature": "public Drawable2dOption\u003CD\u003E()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2? Position { get; set; }",
+                  "summary": "Gets or sets the position of the object in 2D space.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.Origin",
+                  "name": "Origin",
+                  "kind": "Property",
+                  "signature": "public Vec2? Origin { get; set; }",
+                  "summary": "Gets or sets the origin point that the Position refers to.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.Scale",
+                  "name": "Scale",
+                  "kind": "Property",
+                  "signature": "public Vec2? Scale { get; set; }",
+                  "summary": "Gets or sets the scale of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.Rotation",
+                  "name": "Rotation",
+                  "kind": "Property",
+                  "signature": "public double? Rotation { get; set; }",
+                  "summary": "Gets or sets the rotation angle in degrees.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.Drawable2dOption\u00601.Create(\u00600)",
+                  "name": "Create",
+                  "kind": "Method",
+                  "signature": "public override bool Create(D obj)",
+                  "summary": "Assigns the specified position, origin, scale, and rotation to the object and returns a value indicating whether the operation was\nsuccessful.",
+                  "returns": "true if the operation was successful; otherwise, false.",
+                  "parameters": [
+                    {
+                      "name": "obj",
+                      "type": "D",
+                      "description": "The object to which the properties will be assigned."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont",
+              "name": "DrawableFont",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class DrawableFont : Drawable2d",
+              "summary": "Represents a drawable text element that can be rendered on a 2D canvas using a specified font.",
+              "remarks": "This class allows rendering multi-line text with customizable properties such as\nfont, scale, rotation, color, and flipping. The text is automatically split into lines based on newline\ncharacters, and the size of the drawable is updated accordingly.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.#ctor",
+                  "name": "DrawableFont",
+                  "kind": "Constructor",
+                  "signature": "public DrawableFont()",
+                  "summary": "Initializes a new instance of the Drawables.DrawableFont class with default settings.",
+                  "remarks": "The default settings include a scale of Vec2.One, a rotation of 0,\na color of Color.White, no flipping (Flipped.None), and an empty list of\nlines.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Font",
+                  "name": "Font",
+                  "kind": "Property",
+                  "signature": "public Font Font { get; set; }",
+                  "summary": "Gets or sets the font used for rendering text.",
+                  "remarks": "Changing the font triggers an update to recalculate the size and layout of\nthe text.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Text",
+                  "name": "Text",
+                  "kind": "Property",
+                  "signature": "public string Text { get; set; }",
+                  "summary": "Gets or sets the text content.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.FontSize",
+                  "name": "FontSize",
+                  "kind": "Property",
+                  "signature": "public int FontSize { get; set; }",
+                  "summary": "Gets or sets the font size.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Lines",
+                  "name": "Lines",
+                  "kind": "Property",
+                  "signature": "public List\u003Cstring\u003E Lines { get; protected set; }",
+                  "summary": "Gets the collection of lines associated with this instance.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Color",
+                  "name": "Color",
+                  "kind": "Property",
+                  "signature": "public Color Color { get; set; }",
+                  "summary": "Gets or sets the color associated with the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Flipped",
+                  "name": "Flipped",
+                  "kind": "Property",
+                  "signature": "public Flipped Flipped { get; set; }",
+                  "summary": "Gets or sets the flipped state of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "summary": "Performs initialization logic for the component.",
+                  "remarks": "This method is called during the component\u0027s lifecycle to set up any\nnecessary state or resources. Override this method to provide custom initialization logic.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "summary": "Releases resources used by the object and performs any necessary cleanup operations.",
+                  "remarks": "This method is called to ensure that any unmanaged resources or other\ndisposable objects associated with the instance are properly released. Override this method to\nimplement custom cleanup logic specific to the derived class.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont.Draw(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas)",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public override void Draw(ICanvas canvas)",
+                  "summary": "Draws the text onto the specified canvas using the configured font, position, and other rendering options.",
+                  "remarks": "This method renders the text line by line, starting at the specified position\nand applying the configured font, scale, rotation, color, and other properties. If the font or text is\nnot set, the method does nothing.",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "The canvas on which the text will be drawn. Cannot be null."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption",
+              "name": "DrawableFontOption",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class DrawableFontOption : Drawable2dOption\u003CDrawableFont\u003E",
+              "summary": "Options for creating a Drawables.DrawableFont.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.#ctor",
+                  "name": "DrawableFontOption",
+                  "kind": "Constructor",
+                  "signature": "public DrawableFontOption()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.Font",
+                  "name": "Font",
+                  "kind": "Property",
+                  "signature": "public Font Font { get; set; }",
+                  "summary": "Gets or sets the font to use.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.Text",
+                  "name": "Text",
+                  "kind": "Property",
+                  "signature": "public string Text { get; set; }",
+                  "summary": "Gets or sets the text to draw.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.Color",
+                  "name": "Color",
+                  "kind": "Property",
+                  "signature": "public Color? Color { get; set; }",
+                  "summary": "Gets or sets the text color.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.Flipped",
+                  "name": "Flipped",
+                  "kind": "Property",
+                  "signature": "public Flipped? Flipped { get; set; }",
+                  "summary": "Gets or sets how the text is flipped.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFontOption.Create(TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableFont)",
+                  "name": "Create",
+                  "kind": "Method",
+                  "signature": "public override bool Create(DrawableFont obj)",
+                  "summary": "Applies the options that were set to the given drawable.",
+                  "returns": "true if the drawable was configured; otherwise false.",
+                  "parameters": [
+                    {
+                      "name": "obj",
+                      "type": "DrawableFont",
+                      "description": "The drawable to configure."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture",
+              "name": "DrawableTexture",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class DrawableTexture : Drawable2d",
+              "summary": "Represents a drawable 2D texture that can be rendered on a canvas with configurable properties such as\nscale, rotation, color, and flipping.",
+              "remarks": "This class extends Drawables.Drawable2d and provides additional functionality for\nrendering textures. The texture can be customized using properties such as scale, rotation, color, and flipping.\nThe DrawableTexture.Draw method is used to render the texture on the specified canvas.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.#ctor",
+                  "name": "DrawableTexture",
+                  "kind": "Constructor",
+                  "signature": "public DrawableTexture()",
+                  "summary": "Represents a drawable texture with properties for scaling, rotation, color, and flipping.",
+                  "remarks": "This constructor initializes the drawable texture with default values from the base Drawable2d class,\nplus color set to white and flipping set to None.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Texture",
+                  "name": "Texture",
+                  "kind": "Property",
+                  "signature": "public Texture Texture { get; set; }",
+                  "summary": "Gets or sets the texture associated with the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Color",
+                  "name": "Color",
+                  "kind": "Property",
+                  "signature": "public Color Color { get; set; }",
+                  "summary": "Gets or sets the color associated with the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Flipped",
+                  "name": "Flipped",
+                  "kind": "Property",
+                  "signature": "public Flipped Flipped { get; set; }",
+                  "summary": "Gets or sets the flipped state of the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2 Size { get; set; }",
+                  "summary": "Gets or sets the size of the texture display area. If set to zero, the texture\u0027s natural size is used.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.SizeMode",
+                  "name": "SizeMode",
+                  "kind": "Property",
+                  "signature": "public SizeMode SizeMode { get; set; }",
+                  "summary": "Gets or sets how the texture is rendered within the Size bounds.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "summary": "Performs initialization tasks required for the component.",
+                  "remarks": "This method is called to set up the component before it is used. Override\nthis method to include any custom initialization logic specific to the derived class. Ensure that any\nrequired resources are properly initialized within this method.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "summary": "Releases resources or performs cleanup operations specific to the derived class.",
+                  "remarks": "This method is called to allow the derived class to release unmanaged\nresources, reset state, or perform other cleanup tasks. Override this method to implement custom\ncleanup logic.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture.Draw(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas)",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public override void Draw(ICanvas canvas)",
+                  "summary": "Draws the current entity on the specified canvas using the configured texture, position, scale,\nrotation, color, and other properties.",
+                  "remarks": "This method renders the entity\u0027s texture on the provided canvas, applying\ntransformations such as scaling, rotation, flipping, and origin offset. If the DrawableTexture.Texture property is\nnull, the method does not perform any drawing.",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "The canvas on which the entity will be drawn. Cannot be null."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption",
+              "name": "DrawableTextureOption",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class DrawableTextureOption : Drawable2dOption\u003CDrawableTexture\u003E",
+              "summary": "Represents an option for configuring a Drawables.DrawableTexture object, including its associated texture.",
+              "remarks": "This class provides a way to specify a DrawableTextureOption.Texture that can be applied to\na Drawables.DrawableTexture during its creation. It extends the functionality of\nDrawables.Drawable2dOption\u00601 to include texture-specific configuration.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.#ctor",
+                  "name": "DrawableTextureOption",
+                  "kind": "Constructor",
+                  "signature": "public DrawableTextureOption()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.Texture",
+                  "name": "Texture",
+                  "kind": "Property",
+                  "signature": "public Texture Texture { get; set; }",
+                  "summary": "Gets or sets the texture associated with the object.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2? Size { get; set; }",
+                  "summary": "Gets or sets the size of the texture display area.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.SizeMode",
+                  "name": "SizeMode",
+                  "kind": "Property",
+                  "signature": "public SizeMode? SizeMode { get; set; }",
+                  "summary": "Gets or sets how the texture is rendered within the Size bounds.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.Flipped",
+                  "name": "Flipped",
+                  "kind": "Property",
+                  "signature": "public Flipped? Flipped { get; set; }",
+                  "summary": "Gets or sets how the texture is flipped.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTextureOption.Create(TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Drawables.DrawableTexture)",
+                  "name": "Create",
+                  "kind": "Method",
+                  "signature": "public override bool Create(DrawableTexture obj)",
+                  "summary": "Creates and initializes a Drawables.DrawableTexture object.",
+                  "remarks": "If the DrawableTextureOption.Texture property is not null, it will\nbe assigned to the obj instance. Size, SizeMode, and Flipped options are also applied if provided.",
+                  "returns": "true if the object was successfully created and initialized; otherwise,\nfalse.",
+                  "parameters": [
+                    {
+                      "name": "obj",
+                      "type": "DrawableTexture",
+                      "description": "The Drawables.DrawableTexture instance to be initialized."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d",
+              "name": "IAnchor2d",
+              "namespace": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces",
+              "kind": "Interface",
+              "signature": "public interface IAnchor2d",
+              "summary": "Represents a 2D anchor with a position and screen bounds.",
+              "remarks": "This interface defines the properties required to describe an anchor in a 2D space,\nincluding its position and the bounds it occupies on the screen.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2 Position { get; set; }",
+                  "summary": "Gets or sets the position of the object in 2D space.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TypeOBasic2d.Entities.Interfaces.IAnchor2d.ScreenBounds",
+                  "name": "ScreenBounds",
+                  "kind": "Property",
+                  "signature": "public Rectangle ScreenBounds { get; set; }",
+                  "summary": "Gets or sets the dimensions and position of the screen bounds.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TypeDBasic2d",
+      "kind": "editor",
+      "namespaces": [
+        {
+          "name": "TypeDBasic2d.Code.Drawable",
+          "types": [
+            {
+              "id": "TypeDBasic2d.Code.Drawable.Drawable2dCode",
+              "name": "Drawable2dCode",
+              "namespace": "TypeDBasic2d.Code.Drawable",
+              "kind": "Class",
+              "signature": "public class Drawable2dCode : DrawableCode",
+              "summary": "Represents a specialized implementation of Drawable.DrawableCode for 2D drawable components.",
+              "remarks": "This class extends the functionality of Drawable.DrawableCode to support 2D-specific\ndrawable components. It determines whether the associated component is a base component type for 2D drawables\nand initializes properties and dependencies accordingly.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.Drawable2dCode.#ctor(TypeD.Models.Data.Component)",
+                  "name": "Drawable2dCode",
+                  "kind": "Constructor",
+                  "signature": "public Drawable2dCode(Component component)",
+                  "summary": "Initializes a new instance of the Drawable.Drawable2dCode class with the specified component.",
+                  "parameters": [
+                    {
+                      "name": "component",
+                      "type": "Component",
+                      "description": "The component associated with this drawable object."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.Drawable2dCode.IsBaseComponentType",
+                  "name": "IsBaseComponentType",
+                  "kind": "Property",
+                  "signature": "public bool IsBaseComponentType { get; }",
+                  "summary": "Gets a value indicating whether the current type is considered a base component type.",
+                  "remarks": "A type is considered a base component type if it is either inherently marked as such\nor if its base class is Drawables.Drawable2d.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.Drawable2dCode.InitClass",
+                  "name": "InitClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitClass()",
+                  "summary": "Initializes the class by configuring its properties and dependencies.",
+                  "remarks": "This method sets up the class by adding necessary using directives and defining\nproperties if the class is a base component type. It also invokes the base class implementation to ensure\nproper initialization.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.Drawable2dCode.InitTypeDClass",
+                  "name": "InitTypeDClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitTypeDClass()",
+                  "summary": "Adds the 2D drawable specific usings to the generated TypeD class.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Code.Drawable.DrawableFontCode",
+              "name": "DrawableFontCode",
+              "namespace": "TypeDBasic2d.Code.Drawable",
+              "kind": "Class",
+              "signature": "public class DrawableFontCode : Drawable2dCode",
+              "summary": "Code generator for components deriving from Drawables.DrawableFont.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableFontCode.#ctor(TypeD.Models.Data.Component)",
+                  "name": "DrawableFontCode",
+                  "kind": "Constructor",
+                  "signature": "public DrawableFontCode(Component component)",
+                  "summary": "Initializes a new instance of the Drawable.DrawableFontCode class.",
+                  "parameters": [
+                    {
+                      "name": "component",
+                      "type": "Component",
+                      "description": "The component to generate code for."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableFontCode.IsBaseComponentType",
+                  "name": "IsBaseComponentType",
+                  "kind": "Property",
+                  "signature": "public bool IsBaseComponentType { get; }",
+                  "summary": "Gets a value indicating whether the base class is a base component type or Drawables.DrawableFont itself.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableFontCode.InitClass",
+                  "name": "InitClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitClass()",
+                  "summary": "Initializes the generated class.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableFontCode.InitTypeDClass",
+                  "name": "InitTypeDClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitTypeDClass()",
+                  "summary": "Initializes the TypeD specific part of the generated class.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Code.Drawable.DrawableTextureCode",
+              "name": "DrawableTextureCode",
+              "namespace": "TypeDBasic2d.Code.Drawable",
+              "kind": "Class",
+              "signature": "public class DrawableTextureCode : Drawable2dCode",
+              "summary": "Code generator for components deriving from Drawables.DrawableTexture.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableTextureCode.#ctor(TypeD.Models.Data.Component)",
+                  "name": "DrawableTextureCode",
+                  "kind": "Constructor",
+                  "signature": "public DrawableTextureCode(Component component)",
+                  "summary": "Initializes a new instance of the Drawable.DrawableTextureCode class.",
+                  "parameters": [
+                    {
+                      "name": "component",
+                      "type": "Component",
+                      "description": "The component to generate code for."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableTextureCode.IsBaseComponentType",
+                  "name": "IsBaseComponentType",
+                  "kind": "Property",
+                  "signature": "public bool IsBaseComponentType { get; }",
+                  "summary": "Gets a value indicating whether the base class is a base component type or Drawables.DrawableTexture itself.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableTextureCode.InitClass",
+                  "name": "InitClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitClass()",
+                  "summary": "Initializes the generated class.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Drawable.DrawableTextureCode.InitTypeDClass",
+                  "name": "InitTypeDClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitTypeDClass()",
+                  "summary": "Initializes the TypeD specific part of the generated class.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeDBasic2d.Code.Entity",
+          "types": [
+            {
+              "id": "TypeDBasic2d.Code.Entity.Entity2dCode",
+              "name": "Entity2dCode",
+              "namespace": "TypeDBasic2d.Code.Entity",
+              "kind": "Class",
+              "signature": "public class Entity2dCode : EntityCode",
+              "summary": "Code generator for components deriving from Entities.Entity2d.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Code.Entity.Entity2dCode.#ctor(TypeD.Models.Data.Component)",
+                  "name": "Entity2dCode",
+                  "kind": "Constructor",
+                  "signature": "public Entity2dCode(Component component)",
+                  "summary": "Initializes a new instance of the Entity.Entity2dCode class.",
+                  "parameters": [
+                    {
+                      "name": "component",
+                      "type": "Component",
+                      "description": "The component to generate code for."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Entity.Entity2dCode.IsBaseComponentType",
+                  "name": "IsBaseComponentType",
+                  "kind": "Property",
+                  "signature": "public bool IsBaseComponentType { get; }",
+                  "summary": "Gets a value indicating whether the base class is a base component type or Entities.Entity2d itself.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Entity.Entity2dCode.InitClass",
+                  "name": "InitClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitClass()",
+                  "summary": "Initializes the generated class.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Code.Entity.Entity2dCode.InitTypeDClass",
+                  "name": "InitTypeDClass",
+                  "kind": "Method",
+                  "signature": "protected override void InitTypeDClass()",
+                  "summary": "Initializes the TypeD specific part of the generated class.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeDBasic2d.Components",
+          "types": [
+            {
+              "id": "TypeDBasic2d.Components.Basic2dComponent",
+              "name": "Basic2dComponent",
+              "namespace": "TypeDBasic2d.Components",
+              "kind": "Class",
+              "signature": "public static class Basic2dComponent",
+              "summary": "Factory methods for the TypeOBasic2d component definitions.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Components.Basic2dComponent.Drawable2dComponent",
+                  "name": "Drawable2dComponent",
+                  "kind": "Method",
+                  "signature": "public static Component Drawable2dComponent()",
+                  "summary": "Creates and returns a preconfigured Data.Component instance for 2D drawable objects.",
+                  "remarks": "The returned Data.Component is specifically tailored for 2D drawable\nentities, with its class name, namespace, and template set to match the Drawables.Drawable2d type. It\nalso establishes a parent-child relationship with the core drawable component.",
+                  "returns": "A Data.Component instance configured for 2D drawable objects.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.Basic2dComponent.DrawableFontComponent",
+                  "name": "DrawableFontComponent",
+                  "kind": "Method",
+                  "signature": "public static Component DrawableFontComponent()",
+                  "summary": "Creates the pre built engine component for DrawableFont",
+                  "returns": "A Data.Component instance configured for 2D drawable texts using a font.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.Basic2dComponent.DrawableTextureComponent",
+                  "name": "DrawableTextureComponent",
+                  "kind": "Method",
+                  "signature": "public static Component DrawableTextureComponent()",
+                  "summary": "Creates and returns a preconfigured Data.Component instance for 2D drawable objects.",
+                  "remarks": "The returned Data.Component is specifically tailored for 2D drawable\nentities, with its class name, namespace, and template set to match the Drawables.Drawable2d type. It\nalso establishes a parent-child relationship with the core drawable component.",
+                  "returns": "A Data.Component instance configured for 2D drawable objects.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.Basic2dComponent.Entity2dComponent",
+                  "name": "Entity2dComponent",
+                  "kind": "Method",
+                  "signature": "public static Component Entity2dComponent()",
+                  "summary": "Creates and returns a new 2D entity component.",
+                  "remarks": "The returned component is configured with the class name and namespace of the\nEntities.Entity2d type, a template of type Components.Entity2dComponentTemplate, and a parent component\nderived from CoreComponent.EntityComponent. The base type is set to Entities.Entity.",
+                  "returns": "A Data.Component instance representing a 2D entity component.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Components.Drawable2dComponentTemplate",
+              "name": "Drawable2dComponentTemplate",
+              "namespace": "TypeDBasic2d.Components",
+              "kind": "Class",
+              "signature": "public class Drawable2dComponentTemplate : ComponentTemplate\u003CDrawable2dCode\u003E",
+              "summary": "Represents a template for creating 2D drawable components.",
+              "remarks": "This class provides initialization logic and filtering capabilities for components that are\nassociated with 2D drawable objects. It is intended to be used as a base for defining specific 2D drawable\ncomponent templates.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Components.Drawable2dComponentTemplate.#ctor",
+                  "name": "Drawable2dComponentTemplate",
+                  "kind": "Constructor",
+                  "signature": "public Drawable2dComponentTemplate()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.Drawable2dComponentTemplate.ChildrenFilter(TypeD.Helpers.FilterHelper)",
+                  "name": "ChildrenFilter",
+                  "kind": "Method",
+                  "signature": "public override void ChildrenFilter(FilterHelper filter)",
+                  "summary": "Applies a filter to include only child elements of type Drawables.Drawable.",
+                  "remarks": "This method appends the fully qualified name of the Drawables.Drawable type to\nthe filter criteria.",
+                  "parameters": [
+                    {
+                      "name": "filter",
+                      "type": "FilterHelper",
+                      "description": "The Helpers.FilterHelper instance to which the filter is applied."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Components.DrawableFontComponentTemplate",
+              "name": "DrawableFontComponentTemplate",
+              "namespace": "TypeDBasic2d.Components",
+              "kind": "Class",
+              "signature": "public class DrawableFontComponentTemplate : ComponentTemplate\u003CDrawableFontCode\u003E",
+              "summary": "Represents a template for creating 2D drawable components.",
+              "remarks": "This class provides initialization logic and filtering capabilities for components that are\nassociated with 2D drawable objects. It is intended to be used as a base for defining specific 2D drawable\ncomponent templates.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Components.DrawableFontComponentTemplate.#ctor",
+                  "name": "DrawableFontComponentTemplate",
+                  "kind": "Constructor",
+                  "signature": "public DrawableFontComponentTemplate()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.DrawableFontComponentTemplate.ChildrenFilter(TypeD.Helpers.FilterHelper)",
+                  "name": "ChildrenFilter",
+                  "kind": "Method",
+                  "signature": "public override void ChildrenFilter(FilterHelper filter)",
+                  "summary": "Applies a filter to include only child elements of type Drawables.Drawable.",
+                  "remarks": "This method appends the fully qualified name of the Drawables.Drawable type to\nthe filter criteria.",
+                  "parameters": [
+                    {
+                      "name": "filter",
+                      "type": "FilterHelper",
+                      "description": "The Helpers.FilterHelper instance to which the filter is applied."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Components.DrawableTextureComponentTemplate",
+              "name": "DrawableTextureComponentTemplate",
+              "namespace": "TypeDBasic2d.Components",
+              "kind": "Class",
+              "signature": "public class DrawableTextureComponentTemplate : ComponentTemplate\u003CDrawableTextureCode\u003E",
+              "summary": "Represents a template for creating 2D drawable components.",
+              "remarks": "This class provides initialization logic and filtering capabilities for components that are\nassociated with 2D drawable objects. It is intended to be used as a base for defining specific 2D drawable\ncomponent templates.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Components.DrawableTextureComponentTemplate.#ctor",
+                  "name": "DrawableTextureComponentTemplate",
+                  "kind": "Constructor",
+                  "signature": "public DrawableTextureComponentTemplate()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.DrawableTextureComponentTemplate.ChildrenFilter(TypeD.Helpers.FilterHelper)",
+                  "name": "ChildrenFilter",
+                  "kind": "Method",
+                  "signature": "public override void ChildrenFilter(FilterHelper filter)",
+                  "summary": "Applies a filter to include only child elements of type Drawables.Drawable.",
+                  "remarks": "This method appends the fully qualified name of the Drawables.Drawable type to\nthe filter criteria.",
+                  "parameters": [
+                    {
+                      "name": "filter",
+                      "type": "FilterHelper",
+                      "description": "The Helpers.FilterHelper instance to which the filter is applied."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Components.Entity2dComponentTemplate",
+              "name": "Entity2dComponentTemplate",
+              "namespace": "TypeDBasic2d.Components",
+              "kind": "Class",
+              "signature": "public class Entity2dComponentTemplate : ComponentTemplate\u003CEntity2dCode\u003E",
+              "summary": "Represents a template for 2D entity components, providing functionality to filter child components.",
+              "remarks": "This class is designed to work with 2D entity components and applies filtering logic to\ninclude drawable components. It extends the Components.ComponentTemplate\u00601 base class with a specific\nimplementation for Entity.Entity2dCode.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Components.Entity2dComponentTemplate.#ctor",
+                  "name": "Entity2dComponentTemplate",
+                  "kind": "Constructor",
+                  "signature": "public Entity2dComponentTemplate()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Components.Entity2dComponentTemplate.ChildrenFilter(TypeD.Helpers.FilterHelper)",
+                  "name": "ChildrenFilter",
+                  "kind": "Method",
+                  "signature": "public override void ChildrenFilter(FilterHelper filter)",
+                  "summary": "Appends a filter for child elements of type Drawables.Drawable to the specified filter helper.",
+                  "remarks": "This method modifies the filter by appending a filter string for\nthe Drawables.Drawable type. Ensure that the filter instance is properly initialized\nbefore calling this method.",
+                  "parameters": [
+                    {
+                      "name": "filter",
+                      "type": "FilterHelper",
+                      "description": "The Helpers.FilterHelper instance to which the filter is applied. This parameter cannot be null."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables",
+          "types": [
+            {
+              "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable",
+              "name": "Debug2DDrawable",
+              "namespace": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class Debug2DDrawable : Drawable2d",
+              "summary": "Editor overlay that outlines a 2D component. All pointer interaction is handled by\nDrawables.SelectionController2DDrawable, which sets the selection and hover state on this drawable.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.#ctor",
+                  "name": "Debug2DDrawable",
+                  "kind": "Constructor",
+                  "signature": "public Debug2DDrawable()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Focused",
+                  "name": "Focused",
+                  "kind": "Property",
+                  "signature": "public bool Focused { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the outlined object is selected.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Hovered",
+                  "name": "Hovered",
+                  "kind": "Property",
+                  "signature": "public bool Hovered { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the outlined object is the topmost one under the cursor.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.IsParentOfSelected",
+                  "name": "IsParentOfSelected",
+                  "kind": "Property",
+                  "signature": "public bool IsParentOfSelected { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the outlined object is a parent of a selected node.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.IsChildOfSelected",
+                  "name": "IsChildOfSelected",
+                  "kind": "Property",
+                  "signature": "public bool IsChildOfSelected { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the outlined object is a child of a selected node.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.TypeOObject",
+                  "name": "TypeOObject",
+                  "kind": "Property",
+                  "signature": "public TypeOObject TypeOObject { get; set; }",
+                  "summary": "Gets or sets the object being outlined.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Component",
+                  "name": "Component",
+                  "kind": "Property",
+                  "signature": "public Component Component { get; set; }",
+                  "summary": "Gets or sets the component the outlined object belongs to.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.EditorToolModel",
+                  "name": "EditorToolModel",
+                  "kind": "Property",
+                  "signature": "public IEditorToolModel EditorToolModel { get; set; }",
+                  "summary": "Gets or sets the model providing the active editor tool and the display settings.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.ScreenPosition",
+                  "name": "ScreenPosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 ScreenPosition { get; }",
+                  "summary": "Gets the top-left position of the outlined area on screen.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Draw(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas)",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public override void Draw(ICanvas canvas)",
+                  "summary": "Draws the outline when it is visible for the current display settings.",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "The canvas to draw on."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "summary": "Sets up the outline points and draws this overlay above everything else.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "summary": "Cleans up the overlay.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.ContainsPoint(TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "ContainsPoint",
+                  "kind": "Method",
+                  "signature": "public bool ContainsPoint(Vec2 point)",
+                  "summary": "Determines whether a screen point lies inside the outlined area.",
+                  "returns": "true if the point is inside the area; otherwise false.",
+                  "parameters": [
+                    {
+                      "name": "point",
+                      "type": "Vec2",
+                      "description": "The screen point to test."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.GetBounds",
+                  "name": "GetBounds",
+                  "kind": "Method",
+                  "signature": "public ValueTuple\u003CVec2, Vec2\u003E GetBounds()",
+                  "summary": "Gets the outlined area, which accounts for the position, origin, scale and rotation of drawables.",
+                  "returns": "The top-left position and the size of the area.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable.UpdateLines",
+                  "name": "UpdateLines",
+                  "kind": "Method",
+                  "signature": "public void UpdateLines()",
+                  "summary": "Recomputes the outline points from the current position and size.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable",
+              "name": "SelectionController2DDrawable",
+              "namespace": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables",
+              "kind": "Class",
+              "signature": "public class SelectionController2DDrawable : Drawable2d",
+              "summary": "Handles all pointer interaction of the 2D editor overlays: picking the topmost node under the cursor,\nclick and Ctrl\u002BClick selection, drag selection box, and moving or resizing the selected nodes together,\nkeeping their relative positions and sizes. It also draws the gizmos of the active tool and the combined\nbounds when multiple nodes are selected.",
+              "members": [
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.#ctor",
+                  "name": "SelectionController2DDrawable",
+                  "kind": "Constructor",
+                  "signature": "public SelectionController2DDrawable()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.MouseInputService",
+                  "name": "MouseInputService",
+                  "kind": "Property",
+                  "signature": "public MouseInputService MouseInputService { get; set; }",
+                  "summary": "Gets or sets the mouse input service used to read pointer state.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.Project",
+                  "name": "Project",
+                  "kind": "Property",
+                  "signature": "public Project Project { get; set; }",
+                  "summary": "Gets or sets the project displayed in the viewer.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.HookModel",
+                  "name": "HookModel",
+                  "kind": "Property",
+                  "signature": "public IHookModel HookModel { get; set; }",
+                  "summary": "Gets or sets the hook model used to change the selection and apply changes.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.EditorCommandRegistry",
+                  "name": "EditorCommandRegistry",
+                  "kind": "Property",
+                  "signature": "public IEditorCommandRegistry EditorCommandRegistry { get; set; }",
+                  "summary": "Gets or sets the registry used to execute editor commands.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.EditorToolModel",
+                  "name": "EditorToolModel",
+                  "kind": "Property",
+                  "signature": "public IEditorToolModel EditorToolModel { get; set; }",
+                  "summary": "Gets or sets the model providing the active editor tool and the display settings.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.GetDebugDrawables",
+                  "name": "GetDebugDrawables",
+                  "kind": "Property",
+                  "signature": "public Func\u003CIReadOnlyList\u003CDebug2DDrawable\u003E\u003E GetDebugDrawables { get; set; }",
+                  "summary": "Gets or sets the delegate that lists the editor overlays, in hierarchy order (parents before children).",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "summary": "Draws this controller above everything else.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "summary": "Releases pointer ownership held by this controller.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.Draw(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.ICanvas)",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public override void Draw(ICanvas canvas)",
+                  "summary": "Processes pointer interaction and draws the selection box, the combined selection bounds and the tool gizmos.",
+                  "parameters": [
+                    {
+                      "name": "canvas",
+                      "type": "ICanvas",
+                      "description": "The canvas to draw on."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDBasic2d.Typedeaf.Core.Entities.Drawables.SelectionController2DDrawable.PickTopMost(System.Collections.Generic.IEnumerable{TypeDBasic2d.Typedeaf.Core.Entities.Drawables.Debug2DDrawable},TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "PickTopMost",
+                  "kind": "Method",
+                  "signature": "public static Debug2DDrawable PickTopMost(IEnumerable\u003CDebug2DDrawable\u003E drawables, Vec2 point)",
+                  "summary": "Picks the node to select at a point: the hit node with the highest draw order wins; nodes without a\ndraw order (entities) fall back to the hierarchy, where the innermost node wins.",
+                  "returns": "The topmost overlay at the point, or null if there is none.",
+                  "parameters": [
+                    {
+                      "name": "drawables",
+                      "type": "IEnumerable\u003CDebug2DDrawable\u003E",
+                      "description": "The editor overlays in hierarchy order (parents before children)."
+                    },
+                    {
+                      "name": "point",
+                      "type": "Vec2",
+                      "description": "The world point to test."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
