@@ -1,0 +1,2004 @@
+{
+  "module": "TypeODesktop",
+  "version": "2.0.0",
+  "generatedAtUtc": "2026-11-24T18:59:10.1598798Z",
+  "projects": [
+    {
+      "name": "TypeODesktop",
+      "kind": "game",
+      "namespaces": [
+        {
+          "name": "TypeOEngine.Typedeaf.Desktop",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.DesktopModule",
+              "name": "DesktopModule",
+              "namespace": "TypeOEngine.Typedeaf.Desktop",
+              "kind": "Class",
+              "signature": "public class DesktopModule : Module\u003CDesktopModuleOption\u003E",
+              "summary": "Module that contains interfaces for Window and Keyboard Hardware classes",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModule.#ctor",
+                  "name": "DesktopModule",
+                  "kind": "Constructor",
+                  "signature": "public DesktopModule()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModule.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModule.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModule.LoadExtensions(TypeOEngine.Typedeaf.Core.Engine.TypeO)",
+                  "name": "LoadExtensions",
+                  "kind": "Method",
+                  "signature": "protected override void LoadExtensions(TypeO typeO)",
+                  "parameters": [
+                    {
+                      "name": "typeO",
+                      "type": "TypeO"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption",
+              "name": "DesktopModuleOption",
+              "namespace": "TypeOEngine.Typedeaf.Desktop",
+              "kind": "Class",
+              "signature": "public class DesktopModuleOption : ModuleOption",
+              "summary": "Options for the desktop module.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.#ctor",
+                  "name": "DesktopModuleOption",
+                  "kind": "Constructor",
+                  "signature": "public DesktopModuleOption()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.WindowTitle",
+                  "name": "WindowTitle",
+                  "kind": "Property",
+                  "signature": "public string WindowTitle { get; set; }",
+                  "summary": "Gets or sets the window title.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.WindowSize",
+                  "name": "WindowSize",
+                  "kind": "Property",
+                  "signature": "public Vec2 WindowSize { get; set; }",
+                  "summary": "Gets or sets the window size.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.WindowPosition",
+                  "name": "WindowPosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 WindowPosition { get; set; }",
+                  "summary": "Gets or sets the window position on the desktop.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.WindowFullscreen",
+                  "name": "WindowFullscreen",
+                  "kind": "Property",
+                  "signature": "public bool WindowFullscreen { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the window starts in fullscreen.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.DesktopModuleOption.WindowBorderless",
+                  "name": "WindowBorderless",
+                  "kind": "Property",
+                  "signature": "public bool WindowBorderless { get; set; }",
+                  "summary": "Gets or sets a value indicating whether the window has no border.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow",
+              "name": "DesktopWindow",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics",
+              "kind": "Class",
+              "signature": "public abstract class DesktopWindow : TypeOObject, IWindow",
+              "summary": "Abstract base class for Desktop windows that can be positioned and in windowed mode",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.#ctor",
+                  "name": "DesktopWindow",
+                  "kind": "Constructor",
+                  "signature": "protected DesktopWindow()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec2i Position { get; set; }",
+                  "summary": "Window position",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Fullscreen",
+                  "name": "Fullscreen",
+                  "kind": "Property",
+                  "signature": "public bool Fullscreen { get; set; }",
+                  "summary": "Determines if the window should be in fullscreen",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Borderless",
+                  "name": "Borderless",
+                  "kind": "Property",
+                  "signature": "public bool Borderless { get; set; }",
+                  "summary": "Determines if the window should be without border",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Title",
+                  "name": "Title",
+                  "kind": "Property",
+                  "signature": "public string Title { get; set; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2i Size { get; set; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Canvas",
+                  "name": "Canvas",
+                  "kind": "Property",
+                  "signature": "public ICanvas Canvas { get; set; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.WindowService",
+                  "name": "WindowService",
+                  "kind": "Property",
+                  "signature": "protected WindowService WindowService { get; set; }",
+                  "summary": "Gets or sets the service used to create canvases for this window.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Set(System.String,TypeOEngine.Typedeaf.Core.Common.Vec2i,TypeOEngine.Typedeaf.Core.Common.Vec2i,System.Boolean,System.Boolean)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public abstract void Set(string title, Vec2i position, Vec2i size, bool fullscreen = false, bool borderless = false)",
+                  "summary": "Initialize the Desktop Window",
+                  "parameters": [
+                    {
+                      "name": "title",
+                      "type": "string",
+                      "description": "Desktop window title"
+                    },
+                    {
+                      "name": "position",
+                      "type": "Vec2i",
+                      "description": "Desktop position for the window"
+                    },
+                    {
+                      "name": "size",
+                      "type": "Vec2i",
+                      "description": "Window size"
+                    },
+                    {
+                      "name": "fullscreen",
+                      "type": "bool",
+                      "description": "Window fullscreen"
+                    },
+                    {
+                      "name": "borderless",
+                      "type": "bool",
+                      "description": "Window borders"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Graphics.DesktopWindow.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey",
+              "name": "KeyboardKey",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares",
+              "kind": "Enum",
+              "signature": "public enum KeyboardKey",
+              "summary": "Keyboard keys, using GLFW key codes.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Unknown",
+                  "name": "Unknown",
+                  "kind": "EnumValue",
+                  "signature": "Unknown = -1",
+                  "summary": "An unknown key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Space",
+                  "name": "Space",
+                  "kind": "EnumValue",
+                  "signature": "Space = 32",
+                  "summary": "The Space key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Apostrophe",
+                  "name": "Apostrophe",
+                  "kind": "EnumValue",
+                  "signature": "Apostrophe = 39",
+                  "summary": "The Apostrophe key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Comma",
+                  "name": "Comma",
+                  "kind": "EnumValue",
+                  "signature": "Comma = 44",
+                  "summary": "The Comma key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Minus",
+                  "name": "Minus",
+                  "kind": "EnumValue",
+                  "signature": "Minus = 45",
+                  "summary": "The Minus key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Period",
+                  "name": "Period",
+                  "kind": "EnumValue",
+                  "signature": "Period = 46",
+                  "summary": "The Period key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Slash",
+                  "name": "Slash",
+                  "kind": "EnumValue",
+                  "signature": "Slash = 47",
+                  "summary": "The Slash key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D0",
+                  "name": "D0",
+                  "kind": "EnumValue",
+                  "signature": "D0 = 48",
+                  "summary": "The 0 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D1",
+                  "name": "D1",
+                  "kind": "EnumValue",
+                  "signature": "D1 = 49",
+                  "summary": "The 1 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D2",
+                  "name": "D2",
+                  "kind": "EnumValue",
+                  "signature": "D2 = 50",
+                  "summary": "The 2 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D3",
+                  "name": "D3",
+                  "kind": "EnumValue",
+                  "signature": "D3 = 51",
+                  "summary": "The 3 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D4",
+                  "name": "D4",
+                  "kind": "EnumValue",
+                  "signature": "D4 = 52",
+                  "summary": "The 4 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D5",
+                  "name": "D5",
+                  "kind": "EnumValue",
+                  "signature": "D5 = 53",
+                  "summary": "The 5 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D6",
+                  "name": "D6",
+                  "kind": "EnumValue",
+                  "signature": "D6 = 54",
+                  "summary": "The 6 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D7",
+                  "name": "D7",
+                  "kind": "EnumValue",
+                  "signature": "D7 = 55",
+                  "summary": "The 7 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D8",
+                  "name": "D8",
+                  "kind": "EnumValue",
+                  "signature": "D8 = 56",
+                  "summary": "The 8 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D9",
+                  "name": "D9",
+                  "kind": "EnumValue",
+                  "signature": "D9 = 57",
+                  "summary": "The 9 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Semicolon",
+                  "name": "Semicolon",
+                  "kind": "EnumValue",
+                  "signature": "Semicolon = 59",
+                  "summary": "The Semicolon key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Equal",
+                  "name": "Equal",
+                  "kind": "EnumValue",
+                  "signature": "Equal = 61",
+                  "summary": "The Equal key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.A",
+                  "name": "A",
+                  "kind": "EnumValue",
+                  "signature": "A = 65",
+                  "summary": "The A key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.B",
+                  "name": "B",
+                  "kind": "EnumValue",
+                  "signature": "B = 66",
+                  "summary": "The B key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.C",
+                  "name": "C",
+                  "kind": "EnumValue",
+                  "signature": "C = 67",
+                  "summary": "The C key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.D",
+                  "name": "D",
+                  "kind": "EnumValue",
+                  "signature": "D = 68",
+                  "summary": "The D key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.E",
+                  "name": "E",
+                  "kind": "EnumValue",
+                  "signature": "E = 69",
+                  "summary": "The E key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F",
+                  "name": "F",
+                  "kind": "EnumValue",
+                  "signature": "F = 70",
+                  "summary": "The F key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.G",
+                  "name": "G",
+                  "kind": "EnumValue",
+                  "signature": "G = 71",
+                  "summary": "The G key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.H",
+                  "name": "H",
+                  "kind": "EnumValue",
+                  "signature": "H = 72",
+                  "summary": "The H key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.I",
+                  "name": "I",
+                  "kind": "EnumValue",
+                  "signature": "I = 73",
+                  "summary": "The I key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.J",
+                  "name": "J",
+                  "kind": "EnumValue",
+                  "signature": "J = 74",
+                  "summary": "The J key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.K",
+                  "name": "K",
+                  "kind": "EnumValue",
+                  "signature": "K = 75",
+                  "summary": "The K key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.L",
+                  "name": "L",
+                  "kind": "EnumValue",
+                  "signature": "L = 76",
+                  "summary": "The L key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.M",
+                  "name": "M",
+                  "kind": "EnumValue",
+                  "signature": "M = 77",
+                  "summary": "The M key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.N",
+                  "name": "N",
+                  "kind": "EnumValue",
+                  "signature": "N = 78",
+                  "summary": "The N key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.O",
+                  "name": "O",
+                  "kind": "EnumValue",
+                  "signature": "O = 79",
+                  "summary": "The O key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.P",
+                  "name": "P",
+                  "kind": "EnumValue",
+                  "signature": "P = 80",
+                  "summary": "The P key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Q",
+                  "name": "Q",
+                  "kind": "EnumValue",
+                  "signature": "Q = 81",
+                  "summary": "The Q key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.R",
+                  "name": "R",
+                  "kind": "EnumValue",
+                  "signature": "R = 82",
+                  "summary": "The R key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.S",
+                  "name": "S",
+                  "kind": "EnumValue",
+                  "signature": "S = 83",
+                  "summary": "The S key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.T",
+                  "name": "T",
+                  "kind": "EnumValue",
+                  "signature": "T = 84",
+                  "summary": "The T key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.U",
+                  "name": "U",
+                  "kind": "EnumValue",
+                  "signature": "U = 85",
+                  "summary": "The U key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.V",
+                  "name": "V",
+                  "kind": "EnumValue",
+                  "signature": "V = 86",
+                  "summary": "The V key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.W",
+                  "name": "W",
+                  "kind": "EnumValue",
+                  "signature": "W = 87",
+                  "summary": "The W key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.X",
+                  "name": "X",
+                  "kind": "EnumValue",
+                  "signature": "X = 88",
+                  "summary": "The X key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Y",
+                  "name": "Y",
+                  "kind": "EnumValue",
+                  "signature": "Y = 89",
+                  "summary": "The Y key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Z",
+                  "name": "Z",
+                  "kind": "EnumValue",
+                  "signature": "Z = 90",
+                  "summary": "The Z key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.LeftBracket",
+                  "name": "LeftBracket",
+                  "kind": "EnumValue",
+                  "signature": "LeftBracket = 91",
+                  "summary": "The Left Bracket key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Backslash",
+                  "name": "Backslash",
+                  "kind": "EnumValue",
+                  "signature": "Backslash = 92",
+                  "summary": "The Backslash key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.RightBracket",
+                  "name": "RightBracket",
+                  "kind": "EnumValue",
+                  "signature": "RightBracket = 93",
+                  "summary": "The Right Bracket key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.GraveAccent",
+                  "name": "GraveAccent",
+                  "kind": "EnumValue",
+                  "signature": "GraveAccent = 96",
+                  "summary": "The Grave Accent key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Escape",
+                  "name": "Escape",
+                  "kind": "EnumValue",
+                  "signature": "Escape = 256",
+                  "summary": "The Escape key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Enter",
+                  "name": "Enter",
+                  "kind": "EnumValue",
+                  "signature": "Enter = 257",
+                  "summary": "The Enter key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Tab",
+                  "name": "Tab",
+                  "kind": "EnumValue",
+                  "signature": "Tab = 258",
+                  "summary": "The Tab key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Backspace",
+                  "name": "Backspace",
+                  "kind": "EnumValue",
+                  "signature": "Backspace = 259",
+                  "summary": "The Backspace key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Insert",
+                  "name": "Insert",
+                  "kind": "EnumValue",
+                  "signature": "Insert = 260",
+                  "summary": "The Insert key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Delete",
+                  "name": "Delete",
+                  "kind": "EnumValue",
+                  "signature": "Delete = 261",
+                  "summary": "The Delete key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Right",
+                  "name": "Right",
+                  "kind": "EnumValue",
+                  "signature": "Right = 262",
+                  "summary": "The Right arrow key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Left",
+                  "name": "Left",
+                  "kind": "EnumValue",
+                  "signature": "Left = 263",
+                  "summary": "The Left arrow key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Down",
+                  "name": "Down",
+                  "kind": "EnumValue",
+                  "signature": "Down = 264",
+                  "summary": "The Down arrow key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Up",
+                  "name": "Up",
+                  "kind": "EnumValue",
+                  "signature": "Up = 265",
+                  "summary": "The Up arrow key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.PageUp",
+                  "name": "PageUp",
+                  "kind": "EnumValue",
+                  "signature": "PageUp = 266",
+                  "summary": "The Page Up key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.PageDown",
+                  "name": "PageDown",
+                  "kind": "EnumValue",
+                  "signature": "PageDown = 267",
+                  "summary": "The Page Down key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Home",
+                  "name": "Home",
+                  "kind": "EnumValue",
+                  "signature": "Home = 268",
+                  "summary": "The Home key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.End",
+                  "name": "End",
+                  "kind": "EnumValue",
+                  "signature": "End = 269",
+                  "summary": "The End key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.CapsLock",
+                  "name": "CapsLock",
+                  "kind": "EnumValue",
+                  "signature": "CapsLock = 280",
+                  "summary": "The Caps Lock key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.ScrollLock",
+                  "name": "ScrollLock",
+                  "kind": "EnumValue",
+                  "signature": "ScrollLock = 281",
+                  "summary": "The Scroll Lock key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.NumLock",
+                  "name": "NumLock",
+                  "kind": "EnumValue",
+                  "signature": "NumLock = 282",
+                  "summary": "The Num Lock key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.PrintScreen",
+                  "name": "PrintScreen",
+                  "kind": "EnumValue",
+                  "signature": "PrintScreen = 283",
+                  "summary": "The Print Screen key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Pause",
+                  "name": "Pause",
+                  "kind": "EnumValue",
+                  "signature": "Pause = 284",
+                  "summary": "The Pause key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F1",
+                  "name": "F1",
+                  "kind": "EnumValue",
+                  "signature": "F1 = 290",
+                  "summary": "The F1 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F2",
+                  "name": "F2",
+                  "kind": "EnumValue",
+                  "signature": "F2 = 291",
+                  "summary": "The F2 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F3",
+                  "name": "F3",
+                  "kind": "EnumValue",
+                  "signature": "F3 = 292",
+                  "summary": "The F3 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F4",
+                  "name": "F4",
+                  "kind": "EnumValue",
+                  "signature": "F4 = 293",
+                  "summary": "The F4 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F5",
+                  "name": "F5",
+                  "kind": "EnumValue",
+                  "signature": "F5 = 294",
+                  "summary": "The F5 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F6",
+                  "name": "F6",
+                  "kind": "EnumValue",
+                  "signature": "F6 = 295",
+                  "summary": "The F6 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F7",
+                  "name": "F7",
+                  "kind": "EnumValue",
+                  "signature": "F7 = 296",
+                  "summary": "The F7 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F8",
+                  "name": "F8",
+                  "kind": "EnumValue",
+                  "signature": "F8 = 297",
+                  "summary": "The F8 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F9",
+                  "name": "F9",
+                  "kind": "EnumValue",
+                  "signature": "F9 = 298",
+                  "summary": "The F9 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F10",
+                  "name": "F10",
+                  "kind": "EnumValue",
+                  "signature": "F10 = 299",
+                  "summary": "The F10 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F11",
+                  "name": "F11",
+                  "kind": "EnumValue",
+                  "signature": "F11 = 300",
+                  "summary": "The F11 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F12",
+                  "name": "F12",
+                  "kind": "EnumValue",
+                  "signature": "F12 = 301",
+                  "summary": "The F12 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F13",
+                  "name": "F13",
+                  "kind": "EnumValue",
+                  "signature": "F13 = 302",
+                  "summary": "The F13 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F14",
+                  "name": "F14",
+                  "kind": "EnumValue",
+                  "signature": "F14 = 303",
+                  "summary": "The F14 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F15",
+                  "name": "F15",
+                  "kind": "EnumValue",
+                  "signature": "F15 = 304",
+                  "summary": "The F15 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F16",
+                  "name": "F16",
+                  "kind": "EnumValue",
+                  "signature": "F16 = 305",
+                  "summary": "The F16 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F17",
+                  "name": "F17",
+                  "kind": "EnumValue",
+                  "signature": "F17 = 306",
+                  "summary": "The F17 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F18",
+                  "name": "F18",
+                  "kind": "EnumValue",
+                  "signature": "F18 = 307",
+                  "summary": "The F18 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F19",
+                  "name": "F19",
+                  "kind": "EnumValue",
+                  "signature": "F19 = 308",
+                  "summary": "The F19 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F20",
+                  "name": "F20",
+                  "kind": "EnumValue",
+                  "signature": "F20 = 309",
+                  "summary": "The F20 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F21",
+                  "name": "F21",
+                  "kind": "EnumValue",
+                  "signature": "F21 = 310",
+                  "summary": "The F21 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F22",
+                  "name": "F22",
+                  "kind": "EnumValue",
+                  "signature": "F22 = 311",
+                  "summary": "The F22 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F23",
+                  "name": "F23",
+                  "kind": "EnumValue",
+                  "signature": "F23 = 312",
+                  "summary": "The F23 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F24",
+                  "name": "F24",
+                  "kind": "EnumValue",
+                  "signature": "F24 = 313",
+                  "summary": "The F24 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.F25",
+                  "name": "F25",
+                  "kind": "EnumValue",
+                  "signature": "F25 = 314",
+                  "summary": "The F25 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad0",
+                  "name": "KeyPad0",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad0 = 320",
+                  "summary": "The keypad 0 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad1",
+                  "name": "KeyPad1",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad1 = 321",
+                  "summary": "The keypad 1 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad2",
+                  "name": "KeyPad2",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad2 = 322",
+                  "summary": "The keypad 2 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad3",
+                  "name": "KeyPad3",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad3 = 323",
+                  "summary": "The keypad 3 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad4",
+                  "name": "KeyPad4",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad4 = 324",
+                  "summary": "The keypad 4 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad5",
+                  "name": "KeyPad5",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad5 = 325",
+                  "summary": "The keypad 5 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad6",
+                  "name": "KeyPad6",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad6 = 326",
+                  "summary": "The keypad 6 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad7",
+                  "name": "KeyPad7",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad7 = 327",
+                  "summary": "The keypad 7 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad8",
+                  "name": "KeyPad8",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad8 = 328",
+                  "summary": "The keypad 8 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPad9",
+                  "name": "KeyPad9",
+                  "kind": "EnumValue",
+                  "signature": "KeyPad9 = 329",
+                  "summary": "The keypad 9 key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadDecimal",
+                  "name": "KeyPadDecimal",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadDecimal = 330",
+                  "summary": "The keypad Decimal key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadDivide",
+                  "name": "KeyPadDivide",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadDivide = 331",
+                  "summary": "The keypad Divide key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadMultiply",
+                  "name": "KeyPadMultiply",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadMultiply = 332",
+                  "summary": "The keypad Multiply key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadSubtract",
+                  "name": "KeyPadSubtract",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadSubtract = 333",
+                  "summary": "The keypad Subtract key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadAdd",
+                  "name": "KeyPadAdd",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadAdd = 334",
+                  "summary": "The keypad Add key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadEnter",
+                  "name": "KeyPadEnter",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadEnter = 335",
+                  "summary": "The keypad Enter key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.KeyPadEqual",
+                  "name": "KeyPadEqual",
+                  "kind": "EnumValue",
+                  "signature": "KeyPadEqual = 336",
+                  "summary": "The keypad Equal key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.LeftShift",
+                  "name": "LeftShift",
+                  "kind": "EnumValue",
+                  "signature": "LeftShift = 340",
+                  "summary": "The Left Shift key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.LeftControl",
+                  "name": "LeftControl",
+                  "kind": "EnumValue",
+                  "signature": "LeftControl = 341",
+                  "summary": "The Left Control key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.LeftAlt",
+                  "name": "LeftAlt",
+                  "kind": "EnumValue",
+                  "signature": "LeftAlt = 342",
+                  "summary": "The Left Alt key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.LeftSuper",
+                  "name": "LeftSuper",
+                  "kind": "EnumValue",
+                  "signature": "LeftSuper = 343",
+                  "summary": "The Left Super (Windows) key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.RightShift",
+                  "name": "RightShift",
+                  "kind": "EnumValue",
+                  "signature": "RightShift = 344",
+                  "summary": "The Right Shift key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.RightControl",
+                  "name": "RightControl",
+                  "kind": "EnumValue",
+                  "signature": "RightControl = 345",
+                  "summary": "The Right Control key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.RightAlt",
+                  "name": "RightAlt",
+                  "kind": "EnumValue",
+                  "signature": "RightAlt = 346",
+                  "summary": "The Right Alt key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.RightSuper",
+                  "name": "RightSuper",
+                  "kind": "EnumValue",
+                  "signature": "RightSuper = 347",
+                  "summary": "The Right Super (Windows) key.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey.Menu",
+                  "name": "Menu",
+                  "kind": "EnumValue",
+                  "signature": "Menu = 348",
+                  "summary": "The Menu key.",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IKeyboardHardware",
+              "name": "IKeyboardHardware",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces",
+              "kind": "Interface",
+              "signature": "public interface IKeyboardHardware : IHardware",
+              "summary": "Interface for checking current state of keyboard hardware",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IKeyboardHardware.CurrentKeyDownEvent(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "CurrentKeyDownEvent",
+                  "kind": "Method",
+                  "signature": "public bool CurrentKeyDownEvent(KeyboardKey key)",
+                  "summary": "Check if supplied keyboard object is currently held down",
+                  "returns": "True if key is down",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "KeyboardKey",
+                      "description": "Input key"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IKeyboardHardware.CurrentKeyUpEvent(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "CurrentKeyUpEvent",
+                  "kind": "Method",
+                  "signature": "public bool CurrentKeyUpEvent(KeyboardKey key)",
+                  "summary": "Check if supplied keyboard object is currently not held down",
+                  "returns": "True if key is up",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "KeyboardKey",
+                      "description": "Input key"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IKeyboardHardware.OldKeyDownEvent(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "OldKeyDownEvent",
+                  "kind": "Method",
+                  "signature": "public bool OldKeyDownEvent(KeyboardKey key)",
+                  "summary": "Check if supplied keyboard object was previosly held down last tick",
+                  "returns": "True if key is down",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "KeyboardKey",
+                      "description": "Input key"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IKeyboardHardware.OldKeyUpEvent(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "OldKeyUpEvent",
+                  "kind": "Method",
+                  "signature": "public bool OldKeyUpEvent(KeyboardKey key)",
+                  "summary": "Check if supplied keyboard object was previosly not held down last tick",
+                  "returns": "True if key is up",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "KeyboardKey",
+                      "description": "Input key"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware",
+              "name": "IMouseHardware",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces",
+              "kind": "Interface",
+              "signature": "public interface IMouseHardware : IHardware",
+              "summary": "Provides access to the mouse hardware state.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.CurrentMousePosition",
+                  "name": "CurrentMousePosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 CurrentMousePosition { get; set; }",
+                  "summary": "Gets or sets the current mouse position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.OldMousePosition",
+                  "name": "OldMousePosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 OldMousePosition { get; set; }",
+                  "summary": "Gets or sets the mouse position of the previous frame.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.CurrentWheelPosition",
+                  "name": "CurrentWheelPosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 CurrentWheelPosition { get; set; }",
+                  "summary": "Gets or sets the current scroll wheel position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.OldWheelPosition",
+                  "name": "OldWheelPosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 OldWheelPosition { get; set; }",
+                  "summary": "Gets or sets the scroll wheel position of the previous frame.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.CurrentButtonDownEvent(System.Object)",
+                  "name": "CurrentButtonDownEvent",
+                  "kind": "Method",
+                  "signature": "public bool CurrentButtonDownEvent(object key)",
+                  "summary": "Determines whether the button is down in the current state.",
+                  "returns": "true if the button is down.",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "object",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.CurrentButtonUpEvent(System.Object)",
+                  "name": "CurrentButtonUpEvent",
+                  "kind": "Method",
+                  "signature": "public bool CurrentButtonUpEvent(object key)",
+                  "summary": "Determines whether the button is up in the current state.",
+                  "returns": "true if the button is up.",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "object",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.OldButtonDownEvent(System.Object)",
+                  "name": "OldButtonDownEvent",
+                  "kind": "Method",
+                  "signature": "public bool OldButtonDownEvent(object key)",
+                  "summary": "Determines whether the button was down in the previous state.",
+                  "returns": "true if the button was down.",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "object",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.OldButtonUpEvent(System.Object)",
+                  "name": "OldButtonUpEvent",
+                  "kind": "Method",
+                  "signature": "public bool OldButtonUpEvent(object key)",
+                  "summary": "Determines whether the button was up in the previous state.",
+                  "returns": "true if the button was up.",
+                  "parameters": [
+                    {
+                      "name": "key",
+                      "type": "object",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IMouseHardware.SetState(System.Object)",
+                  "name": "SetState",
+                  "kind": "Method",
+                  "signature": "public void SetState(object state)",
+                  "summary": "Updates the hardware with a new mouse state.",
+                  "parameters": [
+                    {
+                      "name": "state",
+                      "type": "object",
+                      "description": "The new state, or null."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IWindowHardware",
+              "name": "IWindowHardware",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces",
+              "kind": "Interface",
+              "signature": "public interface IWindowHardware : IHardware",
+              "summary": "Interface for Window hardware handling",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.IWindowHardware.CreateWindow",
+                  "name": "CreateWindow",
+                  "kind": "Method",
+                  "signature": "public DesktopWindow CreateWindow()",
+                  "summary": "Initialize a new Window",
+                  "returns": "The newly created window",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot",
+              "name": "MouseStateSnapshot",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces",
+              "kind": "Class",
+              "signature": "public sealed class MouseStateSnapshot",
+              "summary": "Immutable snapshot of the mouse position, scroll and button state for the current and previous frame.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.#ctor(OpenTK.Mathematics.Vector2,OpenTK.Mathematics.Vector2,OpenTK.Mathematics.Vector2,OpenTK.Mathematics.Vector2,System.Collections.Generic.IEnumerable{OpenTK.Windowing.GraphicsLibraryFramework.MouseButton},System.Collections.Generic.IEnumerable{OpenTK.Windowing.GraphicsLibraryFramework.MouseButton})",
+                  "name": "MouseStateSnapshot",
+                  "kind": "Constructor",
+                  "signature": "public MouseStateSnapshot(Vector2 position, Vector2 previousPosition, Vector2 scroll, Vector2 previousScroll, IEnumerable\u003CMouseButton\u003E buttonsDown, IEnumerable\u003CMouseButton\u003E previousButtonsDown)",
+                  "summary": "Initializes a new instance of the Interfaces.MouseStateSnapshot class.",
+                  "parameters": [
+                    {
+                      "name": "position",
+                      "type": "Vector2",
+                      "description": "The current mouse position."
+                    },
+                    {
+                      "name": "previousPosition",
+                      "type": "Vector2",
+                      "description": "The previous mouse position."
+                    },
+                    {
+                      "name": "scroll",
+                      "type": "Vector2",
+                      "description": "The current scroll value."
+                    },
+                    {
+                      "name": "previousScroll",
+                      "type": "Vector2",
+                      "description": "The previous scroll value."
+                    },
+                    {
+                      "name": "buttonsDown",
+                      "type": "IEnumerable\u003CMouseButton\u003E",
+                      "description": "The buttons currently down."
+                    },
+                    {
+                      "name": "previousButtonsDown",
+                      "type": "IEnumerable\u003CMouseButton\u003E",
+                      "description": "The buttons that were down in the previous frame."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.Empty",
+                  "name": "Empty",
+                  "kind": "Property",
+                  "signature": "public static MouseStateSnapshot Empty { get; }",
+                  "summary": "Gets a snapshot with zeroed values and no buttons down.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vector2 Position { get; }",
+                  "summary": "Gets the current mouse position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.PreviousPosition",
+                  "name": "PreviousPosition",
+                  "kind": "Property",
+                  "signature": "public Vector2 PreviousPosition { get; }",
+                  "summary": "Gets the previous mouse position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.Scroll",
+                  "name": "Scroll",
+                  "kind": "Property",
+                  "signature": "public Vector2 Scroll { get; }",
+                  "summary": "Gets the current scroll value.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.PreviousScroll",
+                  "name": "PreviousScroll",
+                  "kind": "Property",
+                  "signature": "public Vector2 PreviousScroll { get; }",
+                  "summary": "Gets the previous scroll value.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.IsButtonDown(OpenTK.Windowing.GraphicsLibraryFramework.MouseButton)",
+                  "name": "IsButtonDown",
+                  "kind": "Method",
+                  "signature": "public bool IsButtonDown(MouseButton button)",
+                  "summary": "Determines whether the button is currently down.",
+                  "returns": "true if the button is down.",
+                  "parameters": [
+                    {
+                      "name": "button",
+                      "type": "MouseButton",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.WasButtonDown(OpenTK.Windowing.GraphicsLibraryFramework.MouseButton)",
+                  "name": "WasButtonDown",
+                  "kind": "Method",
+                  "signature": "public bool WasButtonDown(MouseButton button)",
+                  "summary": "Determines whether the button was down in the previous frame.",
+                  "returns": "true if the button was down.",
+                  "parameters": [
+                    {
+                      "name": "button",
+                      "type": "MouseButton",
+                      "description": "The mouse button."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.Interfaces.MouseStateSnapshot.IsButtonReleased(OpenTK.Windowing.GraphicsLibraryFramework.MouseButton)",
+                  "name": "IsButtonReleased",
+                  "kind": "Method",
+                  "signature": "public bool IsButtonReleased(MouseButton button)",
+                  "summary": "Determines whether the button was released since the previous frame.",
+                  "returns": "true if the button is up and was down previously.",
+                  "parameters": [
+                    {
+                      "name": "button",
+                      "type": "MouseButton",
+                      "description": "The mouse button."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.Desktop.Engine.Services",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService",
+              "name": "KeyboardInputService",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Services",
+              "kind": "Class",
+              "signature": "public class KeyboardInputService : Service",
+              "summary": "Service for more easily handling Keyboard inputs",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.#ctor",
+                  "name": "KeyboardInputService",
+                  "kind": "Constructor",
+                  "signature": "public KeyboardInputService()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.KeyboardHardware",
+                  "name": "KeyboardHardware",
+                  "kind": "Property",
+                  "signature": "protected IKeyboardHardware KeyboardHardware { get; set; }",
+                  "summary": "The low level keyboard handling implementation",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.KeyConverter",
+                  "name": "KeyConverter",
+                  "kind": "Property",
+                  "signature": "protected KeyConverter KeyConverter { get; set; }",
+                  "summary": "Key converter to map high level to low level conversation",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.SetKeyAlias(System.Object,TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "SetKeyAlias",
+                  "kind": "Method",
+                  "signature": "public void SetKeyAlias(object input, KeyboardKey key)",
+                  "summary": "Set a key alias for easier key mapping management",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "Input alias to map the key to"
+                    },
+                    {
+                      "name": "key",
+                      "type": "KeyboardKey",
+                      "description": "Low level key to map"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsDown(System.Object)",
+                  "name": "IsDown",
+                  "kind": "Method",
+                  "signature": "public bool IsDown(object input)",
+                  "summary": "True when input is held down",
+                  "returns": "True when input is held down",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "Input alias to check"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsDown(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "IsDown",
+                  "kind": "Method",
+                  "signature": "public bool IsDown(KeyboardKey input)",
+                  "summary": "True when input is held down",
+                  "returns": "True when input is held down",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "KeyboardKey",
+                      "description": "Input key to check"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsPressed(System.Object)",
+                  "name": "IsPressed",
+                  "kind": "Method",
+                  "signature": "public bool IsPressed(object input)",
+                  "summary": "True when input is pressed",
+                  "returns": "True when input is pressed",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "Input alias to check"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsPressed(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "IsPressed",
+                  "kind": "Method",
+                  "signature": "public bool IsPressed(KeyboardKey input)",
+                  "summary": "True when input is pressed",
+                  "returns": "True when input is pressed",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "KeyboardKey",
+                      "description": "Input key to check"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsReleased(System.Object)",
+                  "name": "IsReleased",
+                  "kind": "Method",
+                  "signature": "public bool IsReleased(object input)",
+                  "summary": "True when input is released",
+                  "returns": "True when input is released",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "Input alias to check"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.KeyboardInputService.IsReleased(TypeOEngine.Typedeaf.Desktop.Engine.Hardwares.KeyboardKey)",
+                  "name": "IsReleased",
+                  "kind": "Method",
+                  "signature": "public bool IsReleased(KeyboardKey input)",
+                  "summary": "True when input is released",
+                  "returns": "True when input is released",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "KeyboardKey",
+                      "description": "Input alias to check"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService",
+              "name": "MouseInputService",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Services",
+              "kind": "Class",
+              "signature": "public class MouseInputService : Service",
+              "summary": "Service that exposes mouse position, wheel and button state.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.#ctor",
+                  "name": "MouseInputService",
+                  "kind": "Constructor",
+                  "signature": "public MouseInputService()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.MouseHardware",
+                  "name": "MouseHardware",
+                  "kind": "Property",
+                  "signature": "protected IMouseHardware MouseHardware { get; set; }",
+                  "summary": "Gets or sets the mouse hardware.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.KeyConverter",
+                  "name": "KeyConverter",
+                  "kind": "Property",
+                  "signature": "protected KeyConverter KeyConverter { get; set; }",
+                  "summary": "Gets or sets the converter that maps input aliases to hardware buttons.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.MousePosition",
+                  "name": "MousePosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 MousePosition { get; }",
+                  "summary": "Gets the current mouse position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.MousePositionRelative",
+                  "name": "MousePositionRelative",
+                  "kind": "Property",
+                  "signature": "public Vec2 MousePositionRelative { get; }",
+                  "summary": "Gets the mouse movement since the previous frame.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.WheelPosition",
+                  "name": "WheelPosition",
+                  "kind": "Property",
+                  "signature": "public Vec2 WheelPosition { get; }",
+                  "summary": "Gets the current scroll wheel position.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.WheelPositionRelative",
+                  "name": "WheelPositionRelative",
+                  "kind": "Property",
+                  "signature": "public Vec2 WheelPositionRelative { get; }",
+                  "summary": "Gets the scroll wheel movement since the previous frame.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.SetKeyAlias(System.Object,System.Object)",
+                  "name": "SetKeyAlias",
+                  "kind": "Method",
+                  "signature": "public void SetKeyAlias(object input, object key)",
+                  "summary": "Maps an input to a hardware mouse button.",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "The input to alias."
+                    },
+                    {
+                      "name": "key",
+                      "type": "object",
+                      "description": "The mouse button it maps to."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.RemoveKeyAlias(System.Object)",
+                  "name": "RemoveKeyAlias",
+                  "kind": "Method",
+                  "signature": "public void RemoveKeyAlias(object input)",
+                  "summary": "Removes a key alias.",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "The key alias to remove."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.ClearKeyAliases",
+                  "name": "ClearKeyAliases",
+                  "kind": "Method",
+                  "signature": "public void ClearKeyAliases()",
+                  "summary": "Clears all key aliases registered with the key converter.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.IsDown(System.Object)",
+                  "name": "IsDown",
+                  "kind": "Method",
+                  "signature": "public bool IsDown(object input)",
+                  "summary": "Determines whether the input is currently held down.",
+                  "returns": "true if the input is down.",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "The input to check."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.IsPressed(System.Object)",
+                  "name": "IsPressed",
+                  "kind": "Method",
+                  "signature": "public bool IsPressed(object input)",
+                  "summary": "Determines whether the input was pressed this frame.",
+                  "returns": "true if the input went down this frame.",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "The input to check."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.MouseInputService.IsReleased(System.Object)",
+                  "name": "IsReleased",
+                  "kind": "Method",
+                  "signature": "public bool IsReleased(object input)",
+                  "summary": "Determines whether the input was released this frame.",
+                  "returns": "true if the input went up this frame.",
+                  "parameters": [
+                    {
+                      "name": "input",
+                      "type": "object",
+                      "description": "The input to check."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService",
+              "name": "WindowService",
+              "namespace": "TypeOEngine.Typedeaf.Desktop.Engine.Services",
+              "kind": "Class",
+              "signature": "public class WindowService : Service, IHasGame",
+              "summary": "Services for creating Windows",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.#ctor",
+                  "name": "WindowService",
+                  "kind": "Constructor",
+                  "signature": "public WindowService()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.WindowHardware",
+                  "name": "WindowHardware",
+                  "kind": "Property",
+                  "signature": "protected IWindowHardware WindowHardware { get; set; }",
+                  "summary": "Gets or sets the window hardware used to create windows.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.Game",
+                  "name": "Game",
+                  "kind": "Property",
+                  "signature": "public Game Game { get; set; }",
+                  "summary": "Gets or sets the game this service belongs to.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.CreateWindow",
+                  "name": "CreateWindow",
+                  "kind": "Method",
+                  "signature": "public DesktopWindow CreateWindow()",
+                  "summary": "Create a new Window with title of Game name and with a size of 800x600",
+                  "returns": "Newly created Window",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.CreateWindow(System.String,TypeOEngine.Typedeaf.Core.Common.Vec2i,TypeOEngine.Typedeaf.Core.Common.Vec2i,System.Boolean,System.Boolean)",
+                  "name": "CreateWindow",
+                  "kind": "Method",
+                  "signature": "public DesktopWindow CreateWindow(string title, Vec2i position, Vec2i size, bool fullscreen = false, bool borderless = false)",
+                  "summary": "Create a new Window and display it",
+                  "returns": "Newly created Window",
+                  "parameters": [
+                    {
+                      "name": "title",
+                      "type": "string",
+                      "description": "Text to show on Title bar"
+                    },
+                    {
+                      "name": "position",
+                      "type": "Vec2i",
+                      "description": "Desktop position to show the window in"
+                    },
+                    {
+                      "name": "size",
+                      "type": "Vec2i",
+                      "description": "Window size"
+                    },
+                    {
+                      "name": "fullscreen",
+                      "type": "bool",
+                      "description": "True to start window in fullscreen mode"
+                    },
+                    {
+                      "name": "borderless",
+                      "type": "bool",
+                      "description": "True to have no border on the window"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.CreateCanvas(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.IWindow)",
+                  "name": "CreateCanvas",
+                  "kind": "Method",
+                  "signature": "public ICanvas CreateCanvas(IWindow window)",
+                  "summary": "Creates a new Canvas tied to a window that covers the entire screen",
+                  "returns": "The newly created Canvas",
+                  "parameters": [
+                    {
+                      "name": "window",
+                      "type": "IWindow",
+                      "description": "Window to attach Canvas to"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.Desktop.Engine.Services.WindowService.CreateCanvas(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.IWindow,TypeOEngine.Typedeaf.Core.Common.Rectangle)",
+                  "name": "CreateCanvas",
+                  "kind": "Method",
+                  "signature": "public ICanvas CreateCanvas(IWindow window, Rectangle viewport)",
+                  "summary": "Creates a new Canvas tied to a window that covers the size of the viewport",
+                  "returns": "The newly created Canvas",
+                  "parameters": [
+                    {
+                      "name": "window",
+                      "type": "IWindow",
+                      "description": "Window to attach Canvas to"
+                    },
+                    {
+                      "name": "viewport",
+                      "type": "Rectangle",
+                      "description": "Canvas viewport"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
