@@ -1,0 +1,1681 @@
+{
+  "module": "TypeOTK",
+  "version": "3.0.2",
+  "generatedAtUtc": "2026-11-25T11:23:48.7119886Z",
+  "projects": [
+    {
+      "name": "TypeOTK",
+      "kind": "game",
+      "namespaces": [
+        {
+          "name": "TypeOEngine.Typedeaf.TK",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.TKGameWindow",
+              "name": "TKGameWindow",
+              "namespace": "TypeOEngine.Typedeaf.TK",
+              "kind": "Class",
+              "signature": "public class TKGameWindow : NativeWindow",
+              "summary": "TypeOTK inherited OpenTK NativeWindow",
+              "members": []
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.TKModule",
+              "name": "TKModule",
+              "namespace": "TypeOEngine.Typedeaf.TK",
+              "kind": "Class",
+              "signature": "public class TKModule : Module\u003CTKModuleOption\u003E",
+              "summary": "Module implementing low level Hardware through OpenTK",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.TKModule.#ctor",
+                  "name": "TKModule",
+                  "kind": "Constructor",
+                  "signature": "public TKModule()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.TKModule.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.TKModule.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.TKModule.LoadExtensions(TypeOEngine.Typedeaf.Core.Engine.TypeO)",
+                  "name": "LoadExtensions",
+                  "kind": "Method",
+                  "signature": "protected override void LoadExtensions(TypeO typeO)",
+                  "parameters": [
+                    {
+                      "name": "typeO",
+                      "type": "TypeO"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.TKModuleOption",
+              "name": "TKModuleOption",
+              "namespace": "TypeOEngine.Typedeaf.TK",
+              "kind": "Class",
+              "signature": "public class TKModuleOption : ModuleOption",
+              "summary": "Options for the TK module.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.TKModuleOption.#ctor",
+                  "name": "TKModuleOption",
+                  "kind": "Constructor",
+                  "signature": "public TKModuleOption()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TK.Contents",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont",
+              "name": "TKFont",
+              "namespace": "TypeOEngine.Typedeaf.TK.Contents",
+              "kind": "Class",
+              "signature": "public class TKFont : Font",
+              "summary": "OpenTK implementation of Font",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.#ctor",
+                  "name": "TKFont",
+                  "kind": "Constructor",
+                  "signature": "public TKFont()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.FontSize",
+                  "name": "FontSize",
+                  "kind": "Property",
+                  "signature": "public int FontSize { get; set; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.Load(System.String)",
+                  "name": "Load",
+                  "kind": "Method",
+                  "signature": "protected override void Load(string path)",
+                  "parameters": [
+                    {
+                      "name": "path",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.MeasureString(System.String)",
+                  "name": "MeasureString",
+                  "kind": "Method",
+                  "signature": "public override Vec2 MeasureString(string text)",
+                  "parameters": [
+                    {
+                      "name": "text",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.Draw(System.String,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.Core.Entities.Flipped,System.Double,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Vec2},System.Nullable{TypeOEngine.Typedeaf.Core.Common.Rectangle})",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public void Draw(string text, Vec2 position, Vec2 scale, Color color, Flipped flipped = 0, double rotation = 0, Vec2? origin = null, Rectangle? clipRect = null)",
+                  "summary": "Draws the text with its top left corner at the position, where the position origin is the bottom left of the viewport",
+                  "parameters": [
+                    {
+                      "name": "text",
+                      "type": "string",
+                      "description": "Text to draw"
+                    },
+                    {
+                      "name": "position",
+                      "type": "Vec2",
+                      "description": "Top left position of the text"
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2",
+                      "description": "The scaling amount"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color",
+                      "description": "Color of the text"
+                    },
+                    {
+                      "name": "flipped",
+                      "type": "Flipped",
+                      "description": "How the text should be flipped"
+                    },
+                    {
+                      "name": "rotation",
+                      "type": "double",
+                      "description": "Rotation angle in degrees."
+                    },
+                    {
+                      "name": "origin",
+                      "type": "Vec2?",
+                      "description": "Local text offset used as the rotation pivot."
+                    },
+                    {
+                      "name": "clipRect",
+                      "type": "Rectangle?",
+                      "description": "Optional local rectangle to clip the text to."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKFont.DrawTransformed(System.String,TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Color,TypeOEngine.Typedeaf.Core.Entities.Flipped,OpenTK.Mathematics.Matrix4,TypeOEngine.Typedeaf.Core.Common.Vec2,System.Double,System.Single,System.Nullable{TypeOEngine.Typedeaf.Core.Common.Rectangle})",
+                  "name": "DrawTransformed",
+                  "kind": "Method",
+                  "signature": "public void DrawTransformed(string text, Vec2 scale, Color color, Flipped flipped, Matrix4 modelMatrix, Vec2 worldTranslation, double worldScale, float viewportHeight, Rectangle? clipRect = null)",
+                  "summary": "Draws text with a local-to-world matrix and canvas camera transform.",
+                  "parameters": [
+                    {
+                      "name": "text",
+                      "type": "string"
+                    },
+                    {
+                      "name": "scale",
+                      "type": "Vec2"
+                    },
+                    {
+                      "name": "color",
+                      "type": "Color"
+                    },
+                    {
+                      "name": "flipped",
+                      "type": "Flipped"
+                    },
+                    {
+                      "name": "modelMatrix",
+                      "type": "Matrix4"
+                    },
+                    {
+                      "name": "worldTranslation",
+                      "type": "Vec2"
+                    },
+                    {
+                      "name": "worldScale",
+                      "type": "double"
+                    },
+                    {
+                      "name": "viewportHeight",
+                      "type": "float"
+                    },
+                    {
+                      "name": "clipRect",
+                      "type": "Rectangle?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture",
+              "name": "TKTexture",
+              "namespace": "TypeOEngine.Typedeaf.TK.Contents",
+              "kind": "Class",
+              "signature": "public class TKTexture : Texture",
+              "summary": "OpenTK implementation of Texture",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.#ctor",
+                  "name": "TKTexture",
+                  "kind": "Constructor",
+                  "signature": "public TKTexture()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.Load(System.String)",
+                  "name": "Load",
+                  "kind": "Method",
+                  "signature": "protected override void Load(string path)",
+                  "parameters": [
+                    {
+                      "name": "path",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.Create(TypeOEngine.Typedeaf.Core.Common.Vec2i,System.Byte[])",
+                  "name": "Create",
+                  "kind": "Method",
+                  "signature": "protected override void Create(Vec2i size, byte[] data)",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "Vec2i"
+                    },
+                    {
+                      "name": "data",
+                      "type": "byte[]"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.Use(OpenTK.Graphics.OpenGL4.TextureUnit)",
+                  "name": "Use",
+                  "kind": "Method",
+                  "signature": "public void Use(TextureUnit unit = 33984)",
+                  "summary": "Activate the usage of the texture in OpenGL",
+                  "parameters": [
+                    {
+                      "name": "unit",
+                      "type": "TextureUnit",
+                      "description": "Shader TextureUnit to bind the texture to"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.Save(System.String)",
+                  "name": "Save",
+                  "kind": "Method",
+                  "signature": "public override void Save(string path)",
+                  "parameters": [
+                    {
+                      "name": "path",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.PixelAt(System.Int32,System.Int32)",
+                  "name": "PixelAt",
+                  "kind": "Method",
+                  "signature": "public override Color PixelAt(int x, int y)",
+                  "parameters": [
+                    {
+                      "name": "x",
+                      "type": "int"
+                    },
+                    {
+                      "name": "y",
+                      "type": "int"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.FlipVertical",
+                  "name": "FlipVertical",
+                  "kind": "Method",
+                  "signature": "public override void FlipVertical()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Contents.TKTexture.FlipHorizontal",
+                  "name": "FlipHorizontal",
+                  "kind": "Method",
+                  "signature": "public override void FlipHorizontal()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TK.Engine.Graphics",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader",
+              "name": "Shader",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics",
+              "kind": "Class",
+              "signature": "public class Shader",
+              "summary": "Compiles and links a vertex/fragment shader program and sets uniforms on it.",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.#ctor(System.String,System.String)",
+                  "name": "Shader",
+                  "kind": "Constructor",
+                  "signature": "public Shader(string vertexShaderSourcePath, string fragmentShaderSourcePath)",
+                  "summary": "Initializes a new instance of the Graphics.Shader class by loading and linking the shader sources.",
+                  "parameters": [
+                    {
+                      "name": "vertexShaderSourcePath",
+                      "type": "string",
+                      "description": "The path of the vertex shader source."
+                    },
+                    {
+                      "name": "fragmentShaderSourcePath",
+                      "type": "string",
+                      "description": "The path of the fragment shader source."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.VertexShaderSourcePath",
+                  "name": "VertexShaderSourcePath",
+                  "kind": "Property",
+                  "signature": "public string VertexShaderSourcePath { get; }",
+                  "summary": "Gets the path of the vertex shader source file.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.VertexShaderSource",
+                  "name": "VertexShaderSource",
+                  "kind": "Property",
+                  "signature": "public string VertexShaderSource { get; }",
+                  "summary": "Gets the vertex shader source code.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.FragmentShaderSourcePath",
+                  "name": "FragmentShaderSourcePath",
+                  "kind": "Property",
+                  "signature": "public string FragmentShaderSourcePath { get; }",
+                  "summary": "Gets the path of the fragment shader source file.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.FragmentShaderSource",
+                  "name": "FragmentShaderSource",
+                  "kind": "Property",
+                  "signature": "public string FragmentShaderSource { get; }",
+                  "summary": "Gets the fragment shader source code.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Handle",
+                  "name": "Handle",
+                  "kind": "Property",
+                  "signature": "public int Handle { get; }",
+                  "summary": "Gets the OpenGL program handle.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,System.Int32)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, int value)",
+                  "summary": "Sets an integer uniform.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "value",
+                      "type": "int",
+                      "description": "The value."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,System.Single)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, float value)",
+                  "summary": "Sets a float uniform.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "value",
+                      "type": "float",
+                      "description": "The value."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,TypeOEngine.Typedeaf.Core.Common.Color)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, Color value)",
+                  "summary": "Sets a vec4 uniform from a color.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "value",
+                      "type": "Color",
+                      "description": "The color."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,System.Double,System.Double,System.Double,System.Double)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, double x, double y, double z, double w)",
+                  "summary": "Sets a vec4 uniform.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "x",
+                      "type": "double",
+                      "description": "The X component."
+                    },
+                    {
+                      "name": "y",
+                      "type": "double",
+                      "description": "The Y component."
+                    },
+                    {
+                      "name": "z",
+                      "type": "double",
+                      "description": "The Z component."
+                    },
+                    {
+                      "name": "w",
+                      "type": "double",
+                      "description": "The W component."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,TypeOEngine.Typedeaf.Core.Common.Vec3)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, Vec3 value)",
+                  "summary": "Sets a vec3 uniform.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "value",
+                      "type": "Vec3",
+                      "description": "The vector."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Set(System.String,OpenTK.Mathematics.Matrix4)",
+                  "name": "Set",
+                  "kind": "Method",
+                  "signature": "public void Set(string name, Matrix4 matrix)",
+                  "summary": "Sets a mat4 uniform.",
+                  "parameters": [
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "description": "The uniform name."
+                    },
+                    {
+                      "name": "matrix",
+                      "type": "Matrix4",
+                      "description": "The matrix."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "public void Cleanup()",
+                  "summary": "Deletes the OpenGL program.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Shader.Use",
+                  "name": "Use",
+                  "kind": "Method",
+                  "signature": "public void Use()",
+                  "summary": "Activates this program for subsequent draw calls.",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas",
+              "name": "TKCanvas",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics",
+              "kind": "Class",
+              "signature": "public class TKCanvas : Canvas, IHasGame",
+              "summary": "TK Implementation of Canvas, contains the supplied TKGame object",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.#ctor(TypeOEngine.Typedeaf.Core.Engine.Graphics.Interfaces.IWindow,TypeOEngine.Typedeaf.Core.Common.Rectangle,TypeOEngine.Typedeaf.TK.TKGameWindow)",
+                  "name": "TKCanvas",
+                  "kind": "Constructor",
+                  "signature": "public TKCanvas(IWindow window, Rectangle viewport, TKGameWindow tKGame)",
+                  "parameters": [
+                    {
+                      "name": "window",
+                      "type": "IWindow"
+                    },
+                    {
+                      "name": "viewport",
+                      "type": "Rectangle"
+                    },
+                    {
+                      "name": "tKGame",
+                      "type": "TKGameWindow"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.TKGame",
+                  "name": "TKGame",
+                  "kind": "Property",
+                  "signature": "public TKGameWindow TKGame { get; set; }",
+                  "summary": "TKGame attached to the Canvas",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Shader",
+                  "name": "Shader",
+                  "kind": "Property",
+                  "signature": "public Shader Shader { get; }",
+                  "summary": "Gets the shader used for untextured primitives.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.TextureShader",
+                  "name": "TextureShader",
+                  "kind": "Property",
+                  "signature": "public Shader TextureShader { get; }",
+                  "summary": "Gets the shader used for textured drawing.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.ViewMatrix",
+                  "name": "ViewMatrix",
+                  "kind": "Property",
+                  "signature": "public Matrix4 ViewMatrix { get; set; }",
+                  "summary": "Gets or sets the view matrix.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.ProjectionMatrix",
+                  "name": "ProjectionMatrix",
+                  "kind": "Property",
+                  "signature": "public Matrix4 ProjectionMatrix { get; set; }",
+                  "summary": "Gets or sets the projection matrix.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Game",
+                  "name": "Game",
+                  "kind": "Property",
+                  "signature": "public Game Game { get; set; }",
+                  "summary": "Gets or sets the game this canvas belongs to.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.EnsureStencilBuffer",
+                  "name": "EnsureStencilBuffer",
+                  "kind": "Method",
+                  "signature": "public bool EnsureStencilBuffer()",
+                  "summary": "Temporarily ensures the currently bound framebuffer has a stencil attachment.",
+                  "remarks": "Pair a successful call with TKCanvas.ReleaseStencilBuffer.",
+                  "returns": "true if the framebuffer has stencil storage; otherwise, false.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.ReleaseStencilBuffer",
+                  "name": "ReleaseStencilBuffer",
+                  "kind": "Method",
+                  "signature": "public void ReleaseStencilBuffer()",
+                  "summary": "Releases the stencil attachment acquired by TKCanvas.EnsureStencilBuffer.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Clear(TypeOEngine.Typedeaf.Core.Common.Color)",
+                  "name": "Clear",
+                  "kind": "Method",
+                  "signature": "public override void Clear(Color clearColor)",
+                  "parameters": [
+                    {
+                      "name": "clearColor",
+                      "type": "Color"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Present",
+                  "name": "Present",
+                  "kind": "Method",
+                  "signature": "public override void Present()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.PreDraw",
+                  "name": "PreDraw",
+                  "kind": "Method",
+                  "signature": "public override void PreDraw()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.UpdateProjection",
+                  "name": "UpdateProjection",
+                  "kind": "Method",
+                  "signature": "public void UpdateProjection()",
+                  "summary": "Rebuilds the projection so one world unit maps to one viewport unit, e.g. after the viewport was resized.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.PostDraw",
+                  "name": "PostDraw",
+                  "kind": "Method",
+                  "signature": "public override void PostDraw()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TKCanvas.Screenshot(TypeOEngine.Typedeaf.Core.Common.Rectangle)",
+                  "name": "Screenshot",
+                  "kind": "Method",
+                  "signature": "public override Texture Screenshot(Rectangle screenRect)",
+                  "parameters": [
+                    {
+                      "name": "screenRect",
+                      "type": "Rectangle"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex",
+              "name": "TexturedVertex",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics",
+              "kind": "Struct",
+              "signature": "public struct TexturedVertex : IVertex",
+              "summary": "Default Vertex implementation, contains Position",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec3,TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "TexturedVertex",
+                  "kind": "Constructor",
+                  "signature": "public TexturedVertex(Vec3 position, Vec2 texCoord)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "position",
+                      "type": "Vec3",
+                      "description": "Vertex Position"
+                    },
+                    {
+                      "name": "texCoord",
+                      "type": "Vec2",
+                      "description": "Texture coordinate"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)",
+                  "name": "TexturedVertex",
+                  "kind": "Constructor",
+                  "signature": "public TexturedVertex(double x, double y, double z, double tx, double ty)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "x",
+                      "type": "double",
+                      "description": "Vertex X pos"
+                    },
+                    {
+                      "name": "y",
+                      "type": "double",
+                      "description": "Vertex Y pos"
+                    },
+                    {
+                      "name": "z",
+                      "type": "double",
+                      "description": "Vertex Z pos"
+                    },
+                    {
+                      "name": "tx",
+                      "type": "double",
+                      "description": "Texture X coordinate"
+                    },
+                    {
+                      "name": "ty",
+                      "type": "double",
+                      "description": "Texture Y coordinate"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec2,TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "TexturedVertex",
+                  "kind": "Constructor",
+                  "signature": "public TexturedVertex(Vec2 position, Vec2 texCoord)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "position",
+                      "type": "Vec2",
+                      "description": "Vertex Position"
+                    },
+                    {
+                      "name": "texCoord",
+                      "type": "Vec2",
+                      "description": "Texture coordinate"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.#ctor(System.Double,System.Double,System.Double,System.Double)",
+                  "name": "TexturedVertex",
+                  "kind": "Constructor",
+                  "signature": "public TexturedVertex(double x, double y, double tx, double ty)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "x",
+                      "type": "double",
+                      "description": "Vertex X pos"
+                    },
+                    {
+                      "name": "y",
+                      "type": "double",
+                      "description": "Vertex Y pos"
+                    },
+                    {
+                      "name": "tx",
+                      "type": "double",
+                      "description": "Texture X coordinate"
+                    },
+                    {
+                      "name": "ty",
+                      "type": "double",
+                      "description": "Texture Y coordinate"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public int Size { get; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec3 Position { get; set; }",
+                  "summary": "Vertex Position",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.TexturedVertex.TexCoord",
+                  "name": "TexCoord",
+                  "kind": "Property",
+                  "signature": "public Vec2 TexCoord { get; set; }",
+                  "summary": "Vertex Position",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex",
+              "name": "Vertex",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics",
+              "kind": "Struct",
+              "signature": "public struct Vertex : IVertex",
+              "summary": "Default Vertex implementation, contains Position",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec3)",
+                  "name": "Vertex",
+                  "kind": "Constructor",
+                  "signature": "public Vertex(Vec3 position)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "position",
+                      "type": "Vec3",
+                      "description": "Vertex Position"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.#ctor(System.Double,System.Double,System.Double)",
+                  "name": "Vertex",
+                  "kind": "Constructor",
+                  "signature": "public Vertex(double x, double y, double z)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "x",
+                      "type": "double"
+                    },
+                    {
+                      "name": "y",
+                      "type": "double"
+                    },
+                    {
+                      "name": "z",
+                      "type": "double"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "Vertex",
+                  "kind": "Constructor",
+                  "signature": "public Vertex(Vec2 position)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "position",
+                      "type": "Vec2",
+                      "description": "Vertex Position"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.#ctor(System.Double,System.Double)",
+                  "name": "Vertex",
+                  "kind": "Constructor",
+                  "signature": "public Vertex(double x, double y)",
+                  "summary": "Vertex Constructor",
+                  "parameters": [
+                    {
+                      "name": "x",
+                      "type": "double"
+                    },
+                    {
+                      "name": "y",
+                      "type": "double"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public int Size { get; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Vertex.Position",
+                  "name": "Position",
+                  "kind": "Property",
+                  "signature": "public Vec3 Position { get; set; }",
+                  "summary": "Vertex Position",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Interfaces",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Interfaces.IVertex",
+              "name": "IVertex",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Interfaces",
+              "kind": "Interface",
+              "signature": "public interface IVertex",
+              "summary": "Interface for Vertices",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Interfaces.IVertex.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public int Size { get; }",
+                  "summary": "Calculate the memory size of each Vertex",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601",
+              "name": "IndicedPrimitive\u003CT\u003E",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+              "kind": "Class",
+              "signature": "public class IndicedPrimitive\u003CT\u003E : Primitive\u003CT\u003E",
+              "summary": "Base class for indiced GL primitives",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.#ctor(System.Int32,System.Int32)",
+                  "name": "IndicedPrimitive\u003CT\u003E",
+                  "kind": "Constructor",
+                  "signature": "public IndicedPrimitive\u003CT\u003E(int vertexCount, int indiceCount)",
+                  "parameters": [
+                    {
+                      "name": "vertexCount",
+                      "type": "int"
+                    },
+                    {
+                      "name": "indiceCount",
+                      "type": "int",
+                      "description": "The number of indices"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.Indices",
+                  "name": "Indices",
+                  "kind": "Property",
+                  "signature": "public uint[] Indices { get; protected set; }",
+                  "summary": "Verticies indices associated with the Primitive",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.Wireframe",
+                  "name": "Wireframe",
+                  "kind": "Property",
+                  "signature": "public bool Wireframe { get; set; }",
+                  "summary": "Draw Primitive as wireframe, default to false",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.CreateBuffers",
+                  "name": "CreateBuffers",
+                  "kind": "Method",
+                  "signature": "protected override void CreateBuffers()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.PreDraw",
+                  "name": "PreDraw",
+                  "kind": "Method",
+                  "signature": "protected override void PreDraw()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.IndicedPrimitive\u00601.InternalDraw",
+                  "name": "InternalDraw",
+                  "kind": "Method",
+                  "signature": "protected override void InternalDraw()",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.PrimitiveDrawType",
+              "name": "PrimitiveDrawType",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+              "kind": "Enum",
+              "signature": "public enum PrimitiveDrawType",
+              "summary": "Determines the way that primitives are drawn",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.PrimitiveDrawType.Point",
+                  "name": "Point",
+                  "kind": "EnumValue",
+                  "signature": "Point = 0",
+                  "summary": "Draw vertices as points",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.PrimitiveDrawType.Line",
+                  "name": "Line",
+                  "kind": "EnumValue",
+                  "signature": "Line = 1",
+                  "summary": "Draw lines between vertices",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.PrimitiveDrawType.Triangle",
+                  "name": "Triangle",
+                  "kind": "EnumValue",
+                  "signature": "Triangle = 2",
+                  "summary": "Draw triangles between vertices, use indices to determine triangle order",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601",
+              "name": "Primitive\u003CT\u003E",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+              "kind": "Class",
+              "signature": "public class Primitive\u003CT\u003E",
+              "summary": "Base class for GL Primitives",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.#ctor(System.Int32,TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.PrimitiveDrawType)",
+                  "name": "Primitive\u003CT\u003E",
+                  "kind": "Constructor",
+                  "signature": "public Primitive\u003CT\u003E(int vertexCount, PrimitiveDrawType primitiveDrawType = 1)",
+                  "summary": "Create a uninitialized Primitive of specified length",
+                  "parameters": [
+                    {
+                      "name": "vertexCount",
+                      "type": "int",
+                      "description": "The number of vertices"
+                    },
+                    {
+                      "name": "primitiveDrawType",
+                      "type": "PrimitiveDrawType",
+                      "description": "How the primitives should be drawn; Point, Line or Triangle. Defaults to Line"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.Vertices",
+                  "name": "Vertices",
+                  "kind": "Property",
+                  "signature": "public T[] Vertices { get; protected set; }",
+                  "summary": "Verticies associated with the Primitive",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.PrimitiveDrawType",
+                  "name": "PrimitiveDrawType",
+                  "kind": "Property",
+                  "signature": "public PrimitiveDrawType PrimitiveDrawType { get; set; }",
+                  "summary": "Determines the way that the vertexes will be drawn in the shader",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.PrimitiveType",
+                  "name": "PrimitiveType",
+                  "kind": "Property",
+                  "signature": "protected PrimitiveType PrimitiveType { get; }",
+                  "summary": "OpenGL PrimitiveType set by PrimitiveDrawType in PreDraw",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.CreateBuffers",
+                  "name": "CreateBuffers",
+                  "kind": "Method",
+                  "signature": "protected virtual void CreateBuffers()",
+                  "summary": "Creates the GL objects of the Primitive in the current GL context",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.Draw",
+                  "name": "Draw",
+                  "kind": "Method",
+                  "signature": "public void Draw()",
+                  "summary": "Draws the primitive by perforing: pre, draw and post methods",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.PreDraw",
+                  "name": "PreDraw",
+                  "kind": "Method",
+                  "signature": "protected virtual void PreDraw()",
+                  "summary": "Called before InternalDraw() used to prepare the draw function",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.InternalDraw",
+                  "name": "InternalDraw",
+                  "kind": "Method",
+                  "signature": "protected virtual void InternalDraw()",
+                  "summary": "Draws the primitive",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.Primitive\u00601.PostDraw",
+                  "name": "PostDraw",
+                  "kind": "Method",
+                  "signature": "protected virtual void PostDraw()",
+                  "summary": "Called after InternalDraw() used to cleanup the draw function",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.RectanglePrimitive",
+              "name": "RectanglePrimitive",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+              "kind": "Class",
+              "signature": "public class RectanglePrimitive : IndicedPrimitive\u003CVertex\u003E",
+              "summary": "Rectanglugar GL Primitive",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.RectanglePrimitive.#ctor",
+                  "name": "RectanglePrimitive",
+                  "kind": "Constructor",
+                  "signature": "public RectanglePrimitive()",
+                  "summary": "Rectangle primitive with a width and height of 1",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.RectanglePrimitive.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "RectanglePrimitive",
+                  "kind": "Constructor",
+                  "signature": "public RectanglePrimitive(Vec2 size)",
+                  "summary": "Rectangle primitive with a specified size",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "Vec2",
+                      "description": "Width and Height of the Rectangle"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.RectanglePrimitive.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2 Size { get; set; }",
+                  "summary": "Width and Height of the Rectangle",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive",
+              "name": "TexturedPrimitive",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives",
+              "kind": "Class",
+              "signature": "public class TexturedPrimitive : IndicedPrimitive\u003CTexturedVertex\u003E",
+              "summary": "Textured GL primitive",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive.#ctor",
+                  "name": "TexturedPrimitive",
+                  "kind": "Constructor",
+                  "signature": "public TexturedPrimitive()",
+                  "summary": "Rectangle primitive with a width and height of 1",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive.#ctor(TypeOEngine.Typedeaf.Core.Common.Vec2)",
+                  "name": "TexturedPrimitive",
+                  "kind": "Constructor",
+                  "signature": "public TexturedPrimitive(Vec2 size)",
+                  "summary": "Rectangle primitive with a specified size",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "Vec2",
+                      "description": "Width and Height of the Rectangle"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive.Size",
+                  "name": "Size",
+                  "kind": "Property",
+                  "signature": "public Vec2 Size { get; set; }",
+                  "summary": "Width and Height of the Rectangle",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive.PreDraw",
+                  "name": "PreDraw",
+                  "kind": "Method",
+                  "signature": "protected override void PreDraw()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Graphics.Primitives.TexturedPrimitive.PostDraw",
+                  "name": "PostDraw",
+                  "kind": "Method",
+                  "signature": "protected override void PostDraw()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOEngine.Typedeaf.TK.Engine.Services",
+          "types": [
+            {
+              "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService",
+              "name": "TKGameService",
+              "namespace": "TypeOEngine.Typedeaf.TK.Engine.Services",
+              "kind": "Class",
+              "signature": "public class TKGameService : Service, IMainThreadUpdatable, IUpdatable",
+              "summary": "Service that holds a instance to the OpenTK Game window implementation",
+              "members": [
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.#ctor",
+                  "name": "TKGameService",
+                  "kind": "Constructor",
+                  "signature": "public TKGameService()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.TKGames",
+                  "name": "TKGames",
+                  "kind": "Property",
+                  "signature": "public List\u003CTKGameWindow\u003E TKGames { get; }",
+                  "summary": "List of currently open Game Windows",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.Pause",
+                  "name": "Pause",
+                  "kind": "Property",
+                  "signature": "public bool Pause { get; set; }",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.Initialize",
+                  "name": "Initialize",
+                  "kind": "Method",
+                  "signature": "protected override void Initialize()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.Cleanup",
+                  "name": "Cleanup",
+                  "kind": "Method",
+                  "signature": "protected override void Cleanup()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.CreateTKGameWindow(OpenTK.Windowing.Desktop.NativeWindowSettings)",
+                  "name": "CreateTKGameWindow",
+                  "kind": "Method",
+                  "signature": "public TKGameWindow CreateTKGameWindow(NativeWindowSettings nativeWindowSettings)",
+                  "summary": "Creates a new Native TK Game Window",
+                  "returns": "The newly created window",
+                  "parameters": [
+                    {
+                      "name": "nativeWindowSettings",
+                      "type": "NativeWindowSettings",
+                      "description": "Window settings"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeOEngine.Typedeaf.TK.Engine.Services.TKGameService.Update(System.Double)",
+                  "name": "Update",
+                  "kind": "Method",
+                  "signature": "public virtual void Update(double dt)",
+                  "parameters": [
+                    {
+                      "name": "dt",
+                      "type": "double"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeOTK.Typedeaf.TK.Engine.Graphics",
+          "types": [
+            {
+              "id": "TypeOTK.Typedeaf.TK.Engine.Graphics.TKGLHelper",
+              "name": "TKGLHelper",
+              "namespace": "TypeOTK.Typedeaf.TK.Engine.Graphics",
+              "kind": "Class",
+              "signature": "public class TKGLHelper",
+              "summary": "OpenGL helper methods.",
+              "members": [
+                {
+                  "id": "TypeOTK.Typedeaf.TK.Engine.Graphics.TKGLHelper.#ctor",
+                  "name": "TKGLHelper",
+                  "kind": "Constructor",
+                  "signature": "public TKGLHelper()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOTK.Typedeaf.TK.Engine.Graphics.TKGLHelper.ContextGeneration",
+                  "name": "ContextGeneration",
+                  "kind": "Property",
+                  "signature": "public static int ContextGeneration { get; }",
+                  "summary": "Incremented each time a canvas sets up a new GL context, invalidates cached GL object handles",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeOTK.Typedeaf.TK.Engine.Graphics.TKGLHelper.CheckGLError(System.String,System.Nullable{OpenTK.Graphics.OpenGL4.ErrorCode})",
+                  "name": "CheckGLError",
+                  "kind": "Method",
+                  "signature": "public static void CheckGLError(string message = null, ErrorCode? expectedError = null)",
+                  "summary": "Throws if OpenGL reports an error (debug builds only).",
+                  "parameters": [
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "description": "Optional text appended to the exception message."
+                    },
+                    {
+                      "name": "expectedError",
+                      "type": "ErrorCode?",
+                      "description": "An error code that is tolerated."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TypeDTK",
+      "kind": "editor",
+      "namespaces": [
+        {
+          "name": "TypeDTK",
+          "types": [
+            {
+              "id": "TypeDTK.TypeDTKInitializer",
+              "name": "TypeDTKInitializer",
+              "namespace": "TypeDTK",
+              "kind": "Class",
+              "signature": "public class TypeDTKInitializer : TypeDModuleInitializer",
+              "members": [
+                {
+                  "id": "TypeDTK.TypeDTKInitializer.#ctor",
+                  "name": "TypeDTKInitializer",
+                  "kind": "Constructor",
+                  "signature": "public TypeDTKInitializer()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.TypeDTKInitializer.Initializer(TypeD.Models.Data.Project)",
+                  "name": "Initializer",
+                  "kind": "Method",
+                  "signature": "public override void Initializer(Project project)",
+                  "parameters": [
+                    {
+                      "name": "project",
+                      "type": "Project"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.TypeDTKInitializer.Uninitializer",
+                  "name": "Uninitializer",
+                  "kind": "Method",
+                  "signature": "public override void Uninitializer()",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TypeDTK.View.Viewer",
+          "types": [
+            {
+              "id": "TypeDTK.View.Viewer.TKViewer",
+              "name": "TKViewer",
+              "namespace": "TypeDTK.View.Viewer",
+              "kind": "Class",
+              "signature": "public class TKViewer : BaseTkOpenGlControl, IViewer",
+              "members": [
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.#ctor",
+                  "name": "TKViewer",
+                  "kind": "Constructor",
+                  "signature": "public TKViewer()",
+                  "summary": "Initializes a new instance of the Viewer.TKViewer class.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Project",
+                  "name": "Project",
+                  "kind": "Property",
+                  "signature": "public Project Project { get; set; }",
+                  "summary": "Gets or sets the project being viewed.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.MouseState",
+                  "name": "MouseState",
+                  "kind": "Property",
+                  "signature": "public MouseStateSnapshot MouseState { get; }",
+                  "summary": "Mouse input for the current frame, with the previous frame\u0027s position, wheel, and button states.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Component",
+                  "name": "Component",
+                  "kind": "Property",
+                  "signature": "public Component Component { get; }",
+                  "summary": "Gets the component currently loaded into the viewer, or null.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Camera",
+                  "name": "Camera",
+                  "kind": "Property",
+                  "signature": "public ViewerCamera Camera { get; }",
+                  "summary": "Gets the editor camera used to navigate the viewer.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Init",
+                  "name": "Init",
+                  "kind": "Method",
+                  "signature": "public virtual void Init()",
+                  "summary": "Creates the underlying viewer with the desktop and TK modules and hooks size changes.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Load(TypeD.Models.Data.Component)",
+                  "name": "Load",
+                  "kind": "Method",
+                  "signature": "public virtual void Load(Component component)",
+                  "summary": "Queues loading the component into the viewer on the next render.",
+                  "parameters": [
+                    {
+                      "name": "component",
+                      "type": "Component",
+                      "description": "The component to display."
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.Unload",
+                  "name": "Unload",
+                  "kind": "Method",
+                  "signature": "public virtual void Unload()",
+                  "summary": "Queues clearing the viewer on the next render.",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OpenTkInit",
+                  "name": "OpenTkInit",
+                  "kind": "Method",
+                  "signature": "protected override void OpenTkInit()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OpenTkTeardown",
+                  "name": "OpenTkTeardown",
+                  "kind": "Method",
+                  "signature": "protected override void OpenTkTeardown()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OpenTkRender",
+                  "name": "OpenTkRender",
+                  "kind": "Method",
+                  "signature": "protected override void OpenTkRender()",
+                  "parameters": []
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnPointerMoved(Avalonia.Input.PointerEventArgs)",
+                  "name": "OnPointerMoved",
+                  "kind": "Method",
+                  "signature": "protected override void OnPointerMoved(PointerEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "PointerEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnPointerPressed(Avalonia.Input.PointerPressedEventArgs)",
+                  "name": "OnPointerPressed",
+                  "kind": "Method",
+                  "signature": "protected override void OnPointerPressed(PointerPressedEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "PointerPressedEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnPointerReleased(Avalonia.Input.PointerReleasedEventArgs)",
+                  "name": "OnPointerReleased",
+                  "kind": "Method",
+                  "signature": "protected override void OnPointerReleased(PointerReleasedEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "PointerReleasedEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnPointerCaptureLost(Avalonia.Input.PointerCaptureLostEventArgs)",
+                  "name": "OnPointerCaptureLost",
+                  "kind": "Method",
+                  "signature": "protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "PointerCaptureLostEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnPointerWheelChanged(Avalonia.Input.PointerWheelEventArgs)",
+                  "name": "OnPointerWheelChanged",
+                  "kind": "Method",
+                  "signature": "protected override void OnPointerWheelChanged(PointerWheelEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "PointerWheelEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnKeyDown(Avalonia.Input.KeyEventArgs)",
+                  "name": "OnKeyDown",
+                  "kind": "Method",
+                  "signature": "protected override void OnKeyDown(KeyEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "KeyEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnKeyUp(Avalonia.Input.KeyEventArgs)",
+                  "name": "OnKeyUp",
+                  "kind": "Method",
+                  "signature": "protected override void OnKeyUp(KeyEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "KeyEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnLostFocus(Avalonia.Input.FocusChangedEventArgs)",
+                  "name": "OnLostFocus",
+                  "kind": "Method",
+                  "signature": "protected override void OnLostFocus(FocusChangedEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "FocusChangedEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnAttachedToVisualTree(Avalonia.VisualTreeAttachmentEventArgs)",
+                  "name": "OnAttachedToVisualTree",
+                  "kind": "Method",
+                  "signature": "protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "VisualTreeAttachmentEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.OnDetachedFromVisualTree(Avalonia.VisualTreeAttachmentEventArgs)",
+                  "name": "OnDetachedFromVisualTree",
+                  "kind": "Method",
+                  "signature": "protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)",
+                  "parameters": [
+                    {
+                      "name": "e",
+                      "type": "VisualTreeAttachmentEventArgs"
+                    }
+                  ]
+                },
+                {
+                  "id": "TypeDTK.View.Viewer.TKViewer.TeleportTo(TypeD.Models.Data.Component)",
+                  "name": "TeleportTo",
+                  "kind": "Method",
+                  "signature": "public void TeleportTo(Component target = null)",
+                  "summary": "Centers a node, the selected node when none is given, or the loaded component when nothing is selected, and zooms out if it doesn\u0027t fit.",
+                  "parameters": [
+                    {
+                      "name": "target",
+                      "type": "Component",
+                      "description": "The node to teleport to, or null to use the selection."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
